@@ -71,8 +71,8 @@ export default function Home() {
               </div>
 
               {/* Mobile Image - Below Title */}
-              <div className="relative md:hidden">
-                <div className="border-4 border-primary p-2 bg-card max-w-xs">
+              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="relative md:hidden block">
+                <div className="border-4 border-primary p-2 bg-card max-w-xs hover:opacity-90 transition-opacity">
                   <img 
                     src="/images/invista-hoje-sales-page-hero.png" 
                     alt="Ebook Invista Hoje" 
@@ -82,7 +82,7 @@ export default function Home() {
                 <div className="absolute -bottom-3 -right-3 bg-primary text-primary-foreground px-2 py-1 font-mono font-bold text-xs border-4 border-background">
                   116 PÁG
                 </div>
-              </div>
+              </a>
               
               <p className="text-base md:text-2xl text-muted-foreground leading-relaxed">
                 Saia das dívidas e alcance o <span className="text-primary font-bold">primeiro milhão</span> — 
@@ -114,8 +114,8 @@ export default function Home() {
             </div>
 
             {/* Desktop Image - Right Side */}
-            <div className="relative hidden md:block">
-              <div className="border-4 md:border-8 border-primary p-2 md:p-4 bg-card">
+            <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="relative hidden md:block">
+              <div className="border-4 md:border-8 border-primary p-2 md:p-4 bg-card hover:opacity-90 transition-opacity">
                 <img 
                   src="/images/invista-hoje-sales-page-hero.png" 
                   alt="Ebook Invista Hoje" 
@@ -125,7 +125,7 @@ export default function Home() {
               <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground px-6 py-3 font-mono font-bold text-lg border-4 border-background">
                 116 PÁGINAS
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -504,7 +504,7 @@ export default function Home() {
               className="w-full text-2xl px-12 py-10 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[12px_12px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[6px_6px_0px_0px_rgba(0,255,255,0.3)] transition-all mb-6"
               asChild
             >
-              <a href="https://pay.hotmart.com/your-checkout-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://pay.hotmart.com/O101016720K?off=ifylfz1r&hotfeature=51&_hi=eyJjaWQiOiIxNzM2MDQwODc2OTcxNzA3NTgyNTY2MzQ4ODgwMDAwIiwiYmlkIjoiMTczNjA0MDg3Njk3MTcwNzU4MjU2NjM0ODg4MDAwMCIsInNpZCI6IjgyYzU5ODRmYjQ3NDQzMDhiNjMzNDBmYTQzNWY2MzFlIn0.1767495396013" target="_blank" rel="noopener noreferrer">
                 EU QUERO MEU EBOOK AGORA!
               </a>
             </Button>
