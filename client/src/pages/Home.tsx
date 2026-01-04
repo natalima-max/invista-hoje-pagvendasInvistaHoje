@@ -613,7 +613,7 @@ export default function Home() {
       <footer className="bg-background border-t-4 border-primary">
         <div className="container py-8 text-center">
           <p className="text-sm text-muted-foreground">
-            Invista Hoje © 2025 - TODOS OS DIREITOS RESERVADOS
+            Invista Hoje © 2026 - TODOS OS DIREITOS RESERVADOS
           </p>
           <p className="text-xs text-muted-foreground mt-2">
             @invistahoje01
