@@ -61,13 +61,27 @@ export default function Home() {
         <div className="container py-12 md:py-24">
           <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-6 md:space-y-8">
+            <div className="space-y-4 md:space-y-8">
               <div className="space-y-3 md:space-y-4">
                 <h1 className="text-4xl md:text-7xl font-display font-bold leading-none tracking-tight">
                   INVISTA HOJE:
                   <span className="block text-primary mt-1 md:mt-2">SEU GUIA DEFINITIVO</span>
                 </h1>
                 <div className="h-1 w-24 md:w-32 bg-primary"></div>
+              </div>
+
+              {/* Mobile Image - Below Title */}
+              <div className="relative md:hidden">
+                <div className="border-4 border-primary p-2 bg-card max-w-xs">
+                  <img 
+                    src="/images/invista-hoje-sales-page-hero.png" 
+                    alt="Ebook Invista Hoje" 
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="absolute -bottom-3 -right-3 bg-primary text-primary-foreground px-2 py-1 font-mono font-bold text-xs border-4 border-background">
+                  116 PÁG
+                </div>
               </div>
               
               <p className="text-base md:text-2xl text-muted-foreground leading-relaxed">
@@ -99,16 +113,16 @@ export default function Home() {
               </Button>
             </div>
 
-            {/* Right Image */}
-            <div className="relative hidden sm:block">
+            {/* Desktop Image - Right Side */}
+            <div className="relative hidden md:block">
               <div className="border-4 md:border-8 border-primary p-2 md:p-4 bg-card">
                 <img 
                   src="/images/invista-hoje-sales-page-hero.png" 
                   alt="Ebook Invista Hoje" 
-                  className="w-full h-auto max-w-xs md:max-w-none"
+                  className="w-full h-auto"
                 />
               </div>
-              <div className="absolute -bottom-4 md:-bottom-6 -right-4 md:-right-6 bg-primary text-primary-foreground px-3 md:px-6 py-2 md:py-3 font-mono font-bold text-sm md:text-lg border-4 border-background">
+              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground px-6 py-3 font-mono font-bold text-lg border-4 border-background">
                 116 PÁGINAS
               </div>
             </div>
