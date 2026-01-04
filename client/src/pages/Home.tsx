@@ -58,41 +58,41 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative bg-background border-b-8 border-primary">
-        <div className="container py-16 md:py-24">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="container py-12 md:py-24">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h1 className="text-5xl md:text-7xl font-display font-bold leading-none tracking-tight">
+            <div className="space-y-6 md:space-y-8">
+              <div className="space-y-3 md:space-y-4">
+                <h1 className="text-4xl md:text-7xl font-display font-bold leading-none tracking-tight">
                   INVISTA HOJE:
-                  <span className="block text-primary mt-2">SEU GUIA DEFINITIVO</span>
+                  <span className="block text-primary mt-1 md:mt-2">SEU GUIA DEFINITIVO</span>
                 </h1>
-                <div className="h-1 w-32 bg-primary"></div>
+                <div className="h-1 w-24 md:w-32 bg-primary"></div>
               </div>
               
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-2xl text-muted-foreground leading-relaxed">
                 Saia das dívidas e alcance o <span className="text-primary font-bold">primeiro milhão</span> — 
                 mesmo que você nunca tenha investido antes.
               </p>
 
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                  <p className="text-lg">Passo a passo <strong>claro e prático</strong></p>
+              <div className="space-y-2 md:space-y-3">
+                <div className="flex items-start gap-2 md:gap-3">
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-0.5 md:mt-1" />
+                  <p className="text-sm md:text-lg">Passo a passo <strong>claro e prático</strong></p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                  <p className="text-lg">Transforme sua <strong>vida financeira</strong></p>
+                <div className="flex items-start gap-2 md:gap-3">
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-0.5 md:mt-1" />
+                  <p className="text-sm md:text-lg">Transforme sua <strong>vida financeira</strong></p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                  <p className="text-lg">Conquiste a <strong>liberdade</strong> que sempre sonhou</p>
+                <div className="flex items-start gap-2 md:gap-3">
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-0.5 md:mt-1" />
+                  <p className="text-sm md:text-lg">Conquiste a <strong>liberdade</strong> que sempre sonhou</p>
                 </div>
               </div>
 
               <Button 
                 size="lg" 
-                className="w-full md:w-auto text-xl px-12 py-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[8px_8px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,255,255,0.3)] transition-all"
+                className="w-full md:w-auto text-base md:text-xl px-8 md:px-12 py-6 md:py-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[8px_8px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,255,255,0.3)] transition-all"
                 onClick={scrollToPrice}
               >
                 SIM! EU QUERO LIBERDADE FINANCEIRA!
@@ -100,15 +100,15 @@ export default function Home() {
             </div>
 
             {/* Right Image */}
-            <div className="relative">
-              <div className="border-8 border-primary p-4 bg-card">
+            <div className="relative hidden sm:block">
+              <div className="border-4 md:border-8 border-primary p-2 md:p-4 bg-card">
                 <img 
                   src="/images/invista-hoje-sales-page-hero.png" 
                   alt="Ebook Invista Hoje" 
-                  className="w-full h-auto"
+                  className="w-full h-auto max-w-xs md:max-w-none"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground px-6 py-3 font-mono font-bold text-lg border-4 border-background">
+              <div className="absolute -bottom-4 md:-bottom-6 -right-4 md:-right-6 bg-primary text-primary-foreground px-3 md:px-6 py-2 md:py-3 font-mono font-bold text-sm md:text-lg border-4 border-background">
                 116 PÁGINAS
               </div>
             </div>
