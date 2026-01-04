@@ -119,21 +119,21 @@ export default function Home() {
       {/* Problems Section */}
       <section className="bg-card border-b-8 border-primary">
         <div className="container py-16 md:py-20">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-center mb-12 px-2">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-8 md:mb-12 px-2">
             VOCÊ ESTÁ CANSADO DE...
           </h2>
           
-          <div className="grid sm:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto px-2 sm:px-0">
+          <div className="grid sm:grid-cols-2 gap-3 md:gap-6 max-w-4xl mx-auto px-2 sm:px-0">
             {[
-              { emoji: "😰", text: "Dívidas que parecem não ter fim, te sufocando e tirando o seu sono?", color: "from-red-500/20 to-red-600/20" },
-              { emoji: "😨", text: "Medo de começar a investir e perder dinheiro?", color: "from-orange-500/20 to-orange-600/20" },
-              { emoji: "😔", text: "Sensação de que a liberdade financeira é apenas para 'ricos'?", color: "from-yellow-500/20 to-yellow-600/20" },
-              { emoji: "😞", text: "Se sentir atrasado em relação às suas próprias conquistas quando se compara com outras pessoas?", color: "from-pink-500/20 to-pink-600/20" }
+              { emoji: "😰", text: "Dívidas que parecem não ter fim, te sufocando e tirando o seu sono?" },
+              { emoji: "😨", text: "Medo de começar a investir e perder dinheiro?" },
+              { emoji: "😔", text: "Sensação de que a liberdade financeira é apenas para 'ricos'?" },
+              { emoji: "😞", text: "Se sentir atrasado em relação às suas próprias conquistas quando se compara com outras pessoas?" }
             ].map((problem, idx) => (
-              <Card key={idx} className={`p-4 md:p-6 bg-gradient-to-br ${problem.color} border-4 border-muted hover:border-primary transition-all`}>
-                <div className="flex gap-3 items-start">
-                  <span className="text-3xl md:text-4xl flex-shrink-0">{problem.emoji}</span>
-                  <p className="text-sm md:text-base leading-relaxed">{problem.text}</p>
+              <Card key={idx} className="p-3 md:p-6 bg-background border-4 border-muted hover:border-primary transition-all">
+                <div className="flex gap-2 md:gap-3 items-start">
+                  <span className="text-2xl md:text-3xl flex-shrink-0">{problem.emoji}</span>
+                  <p className="text-xs md:text-base leading-relaxed">{problem.text}</p>
                 </div>
               </Card>
             ))}
@@ -148,49 +148,58 @@ export default function Home() {
       </section>
 
       {/* Solution Section */}
-      <section className="bg-background border-b-8 border-primary">
-        <div className="container py-16 md:py-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
+      <section className="bg-gradient-to-r from-primary/10 to-primary/5 border-b-8 border-primary relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+        </div>
+        <div className="container py-16 md:py-24 relative z-10">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="order-2 md:order-1 hidden md:block">
               <img 
                 src="/images/invista-hoje-sales-page-success.png" 
                 alt="Sucesso Financeiro" 
-                className="w-full h-auto border-4 border-primary"
+                className="w-full h-auto border-4 border-primary shadow-[0_0_30px_rgba(0,255,255,0.3)]"
               />
             </div>
             
-            <div className="order-1 md:order-2 space-y-6">
-              <h2 className="text-5xl md:text-6xl font-display font-bold">
-                INVISTA HOJE!
-              </h2>
+            <div className="order-1 md:order-2 space-y-6 md:space-y-8">
+              <div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-2">
+                  INVISTA
+                </h2>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary">
+                  HOJE!
+                </h2>
+              </div>
               
-              <p className="text-xl leading-relaxed">
+              <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
                 O Invista Hoje é a <span className="text-primary font-bold">resposta que você buscava!</span> Um guia completo, 
                 descomplicado e prático, criado para te ajudar a:
               </p>
 
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 bg-card border-l-4 border-primary">
-                  <TrendingUp className="w-8 h-8 text-primary flex-shrink-0" />
+              <div className="space-y-3 md:space-y-4">
+                <div className="flex items-start gap-4 p-4 md:p-5 bg-background border-4 border-primary hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-all">
+                  <div className="text-3xl md:text-4xl">💰</div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1">💰 Sair do Ciclo das Dívidas</h3>
-                    <p className="text-muted-foreground">De uma vez por todas, organize suas finanças</p>
+                    <h3 className="font-bold text-base md:text-lg mb-1">Sair do Ciclo das Dívidas</h3>
+                    <p className="text-sm md:text-base text-muted-foreground">De uma vez por todas, organize suas finanças</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 bg-card border-l-4 border-primary">
-                  <BookOpen className="w-8 h-8 text-primary flex-shrink-0" />
+                <div className="flex items-start gap-4 p-4 md:p-5 bg-background border-4 border-primary hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-all">
+                  <div className="text-3xl md:text-4xl">📚</div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1">📚 Entender Investimentos</h3>
-                    <p className="text-muted-foreground">Do básico ao avançado, sem complicação</p>
+                    <h3 className="font-bold text-base md:text-lg mb-1">Entender Investimentos</h3>
+                    <p className="text-sm md:text-base text-muted-foreground">Do básico ao avançado, sem complicação</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 bg-card border-l-4 border-primary">
-                  <Target className="w-8 h-8 text-primary flex-shrink-0" />
+                <div className="flex items-start gap-4 p-4 md:p-5 bg-background border-4 border-primary hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-all">
+                  <div className="text-3xl md:text-4xl">🎯</div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1">🎯 Alcançar o Primeiro Milhão</h3>
-                    <p className="text-muted-foreground">Construa um patrimônio sólido e duradouro</p>
+                    <h3 className="font-bold text-base md:text-lg mb-1">Alcançar o Primeiro Milhão</h3>
+                    <p className="text-sm md:text-base text-muted-foreground">Construa um patrimônio sólido e duradouro</p>
                   </div>
                 </div>
               </div>
@@ -258,6 +267,60 @@ export default function Home() {
       <section className="bg-background border-b-8 border-primary">
         <div className="container py-16 md:py-20">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-center mb-4">
+      {/* Ebook Index Section */}
+      <section className="bg-background border-b-8 border-primary">
+        <div className="container py-16 md:py-20">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-4">
+            O QUE VOCÊ VAI APRENDER
+          </h2>
+          <div className="h-2 w-24 bg-primary mx-auto mb-12"></div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+              <div className="space-y-3 md:space-y-4">
+                <h3 className="text-lg md:text-xl font-bold text-primary mb-4">📖 CAPÍTULO 1: FUNDAMENTOS</h3>
+                <div className="space-y-2 text-sm md:text-base">
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Como o dinheiro funciona na prática</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Saia das dívidas de forma definitiva</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Conceitos-chave de economia</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Planejamento financeiro pessoal</p>
+                </div>
+              </div>
+
+              <div className="space-y-3 md:space-y-4">
+                <h3 className="text-lg md:text-xl font-bold text-primary mb-4">📊 CAPÍTULO 2: INVESTIMENTOS</h3>
+                <div className="space-y-2 text-sm md:text-base">
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Títulos Públicos e Renda Fixa</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Renda Variável e Ações</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Diversificação de carteira</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Análise de riscos</p>
+                </div>
+              </div>
+
+              <div className="space-y-3 md:space-y-4">
+                <h3 className="text-lg md:text-xl font-bold text-primary mb-4">🎯 CAPÍTULO 3: PRÁTICA</h3>
+                <div className="space-y-2 text-sm md:text-base">
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Guia passo a passo para investir</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Cálculos e simulações práticas</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Jornada rumo ao primeiro milhão</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Exercícios de fixação</p>
+                </div>
+              </div>
+
+              <div className="space-y-3 md:space-y-4">
+                <h3 className="text-lg md:text-xl font-bold text-primary mb-4">💡 BÔNUS EXCLUSIVOS</h3>
+                <div className="space-y-2 text-sm md:text-base">
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Resumos em áudio dos capítulos</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Estudos de caso reais</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Exercícios práticos</p>
+                  <p className="flex items-start gap-2"><span className="text-primary">✓</span> Suporte por email</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Author Section */}
       <section className="bg-background border-b-8 border-primary">
         <div className="container py-16 md:py-20">
