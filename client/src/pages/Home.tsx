@@ -6,13 +6,6 @@
  * - Typography: Space Grotesk (display) + IBM Plex Sans (body) + JetBrains Mono (numbers)
  * - Instant feedback interactions, no smooth transitions
  * - Honest presentation of scarcity and social proof
- * 
- * CHANGELOG:
- * - Improved mobile responsiveness across all sections
- * - Added "Sobre o Autor" section
- * - Removed English image, replaced with CTA button
- * - Added multiple CTA buttons with varied phrases
- * - Integrated Hotmart checkout link
  */
 
 import { Button } from "@/components/ui/button";
@@ -48,76 +41,74 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Sticky Scarcity Banner */}
-      <div className="sticky top-0 z-50 bg-destructive border-b-4 border-primary">
-        <div className="container py-2 md:py-3 flex flex-col md:flex-row items-center justify-between gap-2">
-          <div className="flex items-center gap-2 md:gap-3">
+      <div className="sticky top-0 z-50 bg-destructive border-b-4 border-primary overflow-hidden">
+        <div className="container py-2 md:py-3 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-2 md:gap-3">
+          <div className="flex items-center gap-1 sm:gap-2 md:gap-3 min-w-0 flex-1">
             <Clock className="w-4 h-4 md:w-5 md:h-5 text-primary animate-pulse flex-shrink-0" />
-            <p className="text-xs md:text-base font-mono font-bold text-white text-center md:text-left">
-              ⚡ PROMOÇÃO ESPECIAL: Apenas <span className="text-primary text-base md:text-xl">10 ebooks</span> restantes com este preço!
+            <p className="text-xs sm:text-sm md:text-base font-mono font-bold text-white truncate sm:truncate md:text-left">
+              ⚡ PROMOÇÃO: Apenas <span className="text-primary">10 ebooks</span> restantes!
             </p>
           </div>
-          <Badge variant="outline" className="bg-primary text-primary-foreground border-primary font-mono text-xs md:text-sm px-2 md:px-3 py-1">
+          <Badge variant="outline" className="bg-primary text-primary-foreground border-primary font-mono text-xs md:text-sm px-2 md:px-3 py-1 flex-shrink-0">
             <Users className="w-3 h-3 md:w-4 md:h-4 mr-1" />
-            150+ LEITORES
+            150+
           </Badge>
         </div>
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-background border-b-4 md:border-b-8 border-primary">
-        <div className="container py-12 md:py-24">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <section className="relative bg-background border-b-8 border-primary">
+        <div className="container py-16 md:py-24">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-6 md:space-y-8">
-              <div className="space-y-3 md:space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold leading-none tracking-tight">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h1 className="text-5xl md:text-7xl font-display font-bold leading-none tracking-tight">
                   INVISTA HOJE:
                   <span className="block text-primary mt-2">SEU GUIA DEFINITIVO</span>
                 </h1>
-                <div className="h-1 w-24 md:w-32 bg-primary"></div>
+                <div className="h-1 w-32 bg-primary"></div>
               </div>
               
-              <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 Saia das dívidas e alcance o <span className="text-primary font-bold">primeiro milhão</span> — 
                 mesmo que você nunca tenha investido antes.
               </p>
 
-              <div className="space-y-2 md:space-y-3">
-                <div className="flex items-start gap-2 md:gap-3">
-                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
-                  <p className="text-base md:text-lg">Passo a passo <strong>claro e prático</strong></p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <p className="text-lg">Passo a passo <strong>claro e prático</strong></p>
                 </div>
-                <div className="flex items-start gap-2 md:gap-3">
-                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
-                  <p className="text-base md:text-lg">Transforme sua <strong>vida financeira</strong></p>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <p className="text-lg">Transforme sua <strong>vida financeira</strong></p>
                 </div>
-                <div className="flex items-start gap-2 md:gap-3">
-                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
-                  <p className="text-base md:text-lg">Conquiste a <strong>liberdade</strong> que sempre sonhou</p>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <p className="text-lg">Conquiste a <strong>liberdade</strong> que sempre sonhou</p>
                 </div>
               </div>
 
               <Button 
                 size="lg" 
-                className="w-full md:w-auto text-lg md:text-xl px-8 md:px-12 py-6 md:py-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[8px_8px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,255,255,0.3)] transition-all"
-                asChild
+                className="w-full md:w-auto text-xl px-12 py-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[8px_8px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,255,255,0.3)] transition-all"
+                onClick={scrollToPrice}
               >
-                <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
-                  SIM! EU QUERO LIBERDADE FINANCEIRA!
-                </a>
+                SIM! EU QUERO LIBERDADE FINANCEIRA!
               </Button>
             </div>
 
             {/* Right Image */}
-            <div className="relative order-first md:order-last">
-              <div className="border-4 md:border-8 border-primary p-2 md:p-4 bg-card">
+            <div className="relative">
+              <div className="border-8 border-primary p-4 bg-card">
                 <img 
                   src="/images/invista-hoje-sales-page-hero.png" 
                   alt="Ebook Invista Hoje" 
                   className="w-full h-auto"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-primary text-primary-foreground px-4 py-2 md:px-6 md:py-3 font-mono font-bold text-base md:text-lg border-4 border-background">
+              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground px-6 py-3 font-mono font-bold text-lg border-4 border-background">
                 116 PÁGINAS
               </div>
             </div>
@@ -126,27 +117,30 @@ export default function Home() {
       </section>
 
       {/* Problems Section */}
-      <section className="bg-card border-b-4 md:border-b-8 border-primary">
-        <div className="container py-12 md:py-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-8 md:mb-12 px-4">
+      <section className="bg-card border-b-8 border-primary">
+        <div className="container py-16 md:py-20">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-center mb-12 px-2">
             VOCÊ ESTÁ CANSADO DE...
           </h2>
           
-          <div className="grid sm:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto px-2 sm:px-0">
             {[
-              "Dívidas que parecem não ter fim, te sufocando e tirando o seu sono?",
-              "Medo de começar a investir e perder dinheiro?",
-              "Sensação de que a liberdade financeira é apenas para 'ricos'?",
-              "Se sentir atrasado em relação às suas próprias conquistas quando se compara com outras pessoas?"
+              { emoji: "😰", text: "Dívidas que parecem não ter fim, te sufocando e tirando o seu sono?", color: "from-red-500/20 to-red-600/20" },
+              { emoji: "😨", text: "Medo de começar a investir e perder dinheiro?", color: "from-orange-500/20 to-orange-600/20" },
+              { emoji: "😔", text: "Sensação de que a liberdade financeira é apenas para 'ricos'?", color: "from-yellow-500/20 to-yellow-600/20" },
+              { emoji: "😞", text: "Se sentir atrasado em relação às suas próprias conquistas quando se compara com outras pessoas?", color: "from-pink-500/20 to-pink-600/20" }
             ].map((problem, idx) => (
-              <Card key={idx} className="p-4 md:p-6 bg-background border-4 border-muted hover:border-primary transition-colors">
-                <p className="text-base md:text-lg leading-relaxed">{problem}</p>
+              <Card key={idx} className={`p-4 md:p-6 bg-gradient-to-br ${problem.color} border-4 border-muted hover:border-primary transition-all`}>
+                <div className="flex gap-3 items-start">
+                  <span className="text-3xl md:text-4xl flex-shrink-0">{problem.emoji}</span>
+                  <p className="text-sm md:text-base leading-relaxed">{problem.text}</p>
+                </div>
               </Card>
             ))}
           </div>
 
-          <div className="text-center mt-8 md:mt-12 px-4">
-            <p className="text-xl md:text-2xl lg:text-3xl font-display font-bold text-primary">
+          <div className="text-center mt-12">
+            <p className="text-2xl md:text-3xl font-display font-bold text-primary">
               SE VOCÊ RESPONDEU "SIM" PARA ALGUMAS DESSAS PERGUNTAS...
             </p>
           </div>
@@ -154,9 +148,9 @@ export default function Home() {
       </section>
 
       {/* Solution Section */}
-      <section className="bg-background border-b-4 md:border-b-8 border-primary">
-        <div className="container py-12 md:py-20">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <section className="bg-background border-b-8 border-primary">
+        <div className="container py-16 md:py-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <img 
                 src="/images/invista-hoje-sales-page-success.png" 
@@ -165,63 +159,53 @@ export default function Home() {
               />
             </div>
             
-            <div className="order-1 md:order-2 space-y-4 md:space-y-6">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold">
+            <div className="order-1 md:order-2 space-y-6">
+              <h2 className="text-5xl md:text-6xl font-display font-bold">
                 INVISTA HOJE!
               </h2>
               
-              <p className="text-lg md:text-xl leading-relaxed">
+              <p className="text-xl leading-relaxed">
                 O Invista Hoje é a <span className="text-primary font-bold">resposta que você buscava!</span> Um guia completo, 
                 descomplicado e prático, criado para te ajudar a:
               </p>
 
-              <div className="space-y-3 md:space-y-4">
-                <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-card border-l-4 border-primary">
-                  <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-primary flex-shrink-0" />
+              <div className="space-y-4">
+                <div className="flex items-start gap-4 p-4 bg-card border-l-4 border-primary">
+                  <TrendingUp className="w-8 h-8 text-primary flex-shrink-0" />
                   <div>
-                    <h3 className="font-bold text-base md:text-lg mb-1">Sair do Ciclo das Dívidas</h3>
-                    <p className="text-sm md:text-base text-muted-foreground">De uma vez por todas, organize suas finanças</p>
+                    <h3 className="font-bold text-lg mb-1">💰 Sair do Ciclo das Dívidas</h3>
+                    <p className="text-muted-foreground">De uma vez por todas, organize suas finanças</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-card border-l-4 border-primary">
-                  <BookOpen className="w-6 h-6 md:w-8 md:h-8 text-primary flex-shrink-0" />
+                <div className="flex items-start gap-4 p-4 bg-card border-l-4 border-primary">
+                  <BookOpen className="w-8 h-8 text-primary flex-shrink-0" />
                   <div>
-                    <h3 className="font-bold text-base md:text-lg mb-1">Entender Investimentos</h3>
-                    <p className="text-sm md:text-base text-muted-foreground">Do básico ao avançado, sem complicação</p>
+                    <h3 className="font-bold text-lg mb-1">📚 Entender Investimentos</h3>
+                    <p className="text-muted-foreground">Do básico ao avançado, sem complicação</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-card border-l-4 border-primary">
-                  <Target className="w-6 h-6 md:w-8 md:h-8 text-primary flex-shrink-0" />
+                <div className="flex items-start gap-4 p-4 bg-card border-l-4 border-primary">
+                  <Target className="w-8 h-8 text-primary flex-shrink-0" />
                   <div>
-                    <h3 className="font-bold text-base md:text-lg mb-1">Alcançar o Primeiro Milhão</h3>
-                    <p className="text-sm md:text-base text-muted-foreground">Construa um patrimônio sólido e duradouro</p>
+                    <h3 className="font-bold text-lg mb-1">🎯 Alcançar o Primeiro Milhão</h3>
+                    <p className="text-muted-foreground">Construa um patrimônio sólido e duradouro</p>
                   </div>
                 </div>
               </div>
-
-              <Button 
-                size="lg" 
-                className="w-full text-lg md:text-xl px-8 py-6 md:py-7 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[6px_6px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[3px_3px_0px_0px_rgba(0,255,255,0.3)] transition-all"
-                asChild
-              >
-                <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
-                  QUERO TRANSFORMAR MINHA VIDA AGORA!
-                </a>
-              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Learning Method Section - REMOVED IMAGE, ADDED CTA */}
-      <section className="bg-card border-b-4 md:border-b-8 border-primary">
-        <div className="container py-12 md:py-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-3 md:mb-4 px-4">
+      {/* Learning Method Section */}
+      <section className="bg-card border-b-8 border-primary">
+        <div className="container py-16 md:py-20">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-center mb-4">
             COMO FUNCIONA O MÉTODO?
           </h2>
-          <div className="h-2 w-20 md:w-24 bg-primary mx-auto mb-8 md:mb-12"></div>
+          <div className="h-2 w-24 bg-primary mx-auto mb-12"></div>
 
           <div className="max-w-5xl mx-auto">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
@@ -255,8 +239,7 @@ export default function Home() {
               ))}
             </div>
 
-            {/* CTA Button replacing the English image */}
-            <div className="text-center">
+            <div className="text-center mt-8 md:mt-12">
               <Button 
                 size="lg" 
                 className="w-full md:w-auto text-lg md:text-xl px-10 md:px-16 py-6 md:py-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[8px_8px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,255,255,0.3)] transition-all"
@@ -271,52 +254,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Author Section - NEW */}
-      <section className="bg-background border-b-4 md:border-b-8 border-primary">
-        <div className="container py-12 md:py-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-3 md:mb-4 px-4">
+      {/* Testimonials Section */}
+      <section className="bg-background border-b-8 border-primary">
+        <div className="container py-16 md:py-20">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-center mb-4">
+      {/* Author Section */}
+      <section className="bg-background border-b-8 border-primary">
+        <div className="container py-16 md:py-20">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-center mb-4">
             SOBRE O AUTOR
           </h2>
-          <div className="h-2 w-20 md:w-24 bg-primary mx-auto mb-8 md:mb-12"></div>
+          <div className="h-2 w-24 bg-primary mx-auto mb-12"></div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="p-6 md:p-10 bg-card border-4 border-primary">
-              <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
-                <div className="w-32 h-32 md:w-40 md:h-40 bg-primary/20 border-4 border-primary flex items-center justify-center flex-shrink-0">
-                  <Award className="w-16 h-16 md:w-20 md:h-20 text-primary" />
+            <Card className="p-8 bg-card border-4 border-primary">
+              <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                <div className="w-40 h-40 bg-primary/20 border-4 border-primary flex items-center justify-center flex-shrink-0">
+                  <Award className="w-20 h-20 text-primary" />
                 </div>
                 
                 <div className="flex-1 space-y-4 text-center md:text-left">
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-display font-bold mb-2">Nath Lima</h3>
+                    <h3 className="text-3xl font-display font-bold mb-2">Natã Lima de Sousa Silva</h3>
                     <div className="flex items-center justify-center md:justify-start gap-2 text-primary">
                       <Briefcase className="w-5 h-5" />
-                      <p className="font-mono text-sm md:text-base">Especialista em Educação Financeira</p>
+                      <p className="font-mono text-base">Especialista em Educação Financeira</p>
                     </div>
                   </div>
                   
-                  <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-                    Com mais de 10 anos de experiência no mercado financeiro, Nath Lima dedica sua carreira a 
-                    democratizar o acesso ao conhecimento sobre investimentos. Formada em Economia e certificada 
-                    como analista de investimentos, ela já ajudou milhares de pessoas a saírem das dívidas e 
-                    construírem patrimônio através de métodos práticos e descomplicados.
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    Natã dedica sua carreira a democratizar o acesso ao conhecimento sobre investimentos. 
+                    Formado em Economia e certificado como analista de investimentos, ele já ajudou milhares 
+                    de pessoas a saírem das dívidas e construírem patrimônio através de métodos práticos e descomplicados.
                   </p>
 
-                  <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-                    O <span className="text-primary font-bold">Invista Hoje</span> é o resultado de anos de 
-                    experiência condensados em um guia objetivo, sem jargões complicados, focado em resultados 
-                    reais para quem está começando do zero.
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    O <span className="text-primary font-bold">Invista Hoje</span> é o resultado de experiência 
+                    condensada em um guia objetivo, sem jargões complicados, focado em resultados reais para 
+                    quem está começando do zero.
                   </p>
 
                   <div className="flex flex-wrap gap-2 justify-center md:justify-start pt-4">
                     <Badge className="bg-primary/20 text-primary border-primary text-sm">
-                      +10 anos de experiência
+                      📊 Análise de Investimentos
                     </Badge>
                     <Badge className="bg-primary/20 text-primary border-primary text-sm">
-                      Analista Certificada
+                      💡 Educação Financeira
                     </Badge>
                     <Badge className="bg-primary/20 text-primary border-primary text-sm">
-                      +1000 alunos
+                      🎓 Mentor Certificado
                     </Badge>
                   </div>
                 </div>
@@ -326,15 +312,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="bg-card border-b-4 md:border-b-8 border-primary">
-        <div className="container py-12 md:py-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-3 md:mb-4 px-4">
             O QUE OS LEITORES DIZEM
           </h2>
-          <div className="h-2 w-20 md:w-24 bg-primary mx-auto mb-8 md:mb-12"></div>
+          <div className="h-2 w-24 bg-primary mx-auto mb-12"></div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto mb-8 md:mb-12">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
                 name: "Fernanda Plansky",
@@ -355,80 +337,67 @@ export default function Home() {
                 topic: "Estratégia de Longo Prazo"
               }
             ].map((testimonial, idx) => (
-              <Card key={idx} className="p-4 md:p-6 bg-background border-4 border-muted hover:border-primary transition-colors">
-                <div className="flex gap-1 mb-3 md:mb-4">
+              <Card key={idx} className="p-6 bg-card border-4 border-muted hover:border-primary transition-colors">
+                <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-primary text-primary" />
+                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                   ))}
                 </div>
-                <p className="text-sm md:text-lg leading-relaxed mb-4 md:mb-6 italic">"{testimonial.content}"</p>
-                <div className="border-t-2 border-primary pt-3 md:pt-4">
-                  <p className="font-bold text-base md:text-lg">{testimonial.name}</p>
-                  <p className="text-xs md:text-sm text-muted-foreground">{testimonial.role}</p>
-                  <Badge className="mt-2 bg-primary/20 text-primary border-primary text-xs md:text-sm">
+                <p className="text-lg leading-relaxed mb-6 italic">"{testimonial.content}"</p>
+                <div className="border-t-2 border-primary pt-4">
+                  <p className="font-bold text-lg">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  <Badge className="mt-2 bg-primary/20 text-primary border-primary">
                     {testimonial.topic}
                   </Badge>
                 </div>
               </Card>
             ))}
           </div>
-
-          {/* Additional CTA after testimonials */}
-          <div className="text-center">
-            <Button 
-              size="lg" 
-              className="w-full md:w-auto text-lg md:text-xl px-10 md:px-14 py-6 md:py-7 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[6px_6px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[3px_3px_0px_0px_rgba(0,255,255,0.3)] transition-all"
-              asChild
-            >
-              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
-                GARANTIR MEU EBOOK COM DESCONTO!
-              </a>
-            </Button>
-          </div>
         </div>
       </section>
 
       {/* Price Section */}
-      <section id="price-section" className="bg-background border-b-4 md:border-b-8 border-primary">
-        <div className="container py-12 md:py-20">
+      <section id="price-section" className="bg-card border-b-8 border-primary">
+        <div className="container py-16 md:py-20">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <div className="inline-block bg-destructive text-white px-6 md:px-8 py-2 md:py-3 font-mono font-bold text-lg md:text-xl mb-4 md:mb-6 border-4 border-primary">
+            <div className="text-center mb-12">
+              <div className="inline-block bg-destructive text-white px-8 py-3 font-mono font-bold text-xl mb-6 border-4 border-primary">
                 POR TEMPO LIMITADO!
               </div>
               
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mb-4 md:mb-6">
+              <div className="flex items-center justify-center gap-6 mb-6">
                 <div className="text-center">
-                  <p className="text-xs md:text-sm text-muted-foreground mb-1 md:mb-2">DE</p>
-                  <p className="text-3xl md:text-4xl font-mono font-bold line-through text-muted-foreground">R$ 37,00</p>
+                  <p className="text-sm text-muted-foreground mb-2">DE</p>
+                  <p className="text-4xl font-mono font-bold line-through text-muted-foreground">R$ 37,00</p>
                 </div>
-                <div className="text-4xl md:text-6xl text-primary">→</div>
+                <div className="text-6xl text-primary">→</div>
                 <div className="text-center">
-                  <p className="text-xs md:text-sm text-primary mb-1 md:mb-2">POR APENAS</p>
-                  <p className="text-5xl md:text-6xl lg:text-7xl font-mono font-bold text-primary">R$ 19,90</p>
+                  <p className="text-sm text-primary mb-2">POR APENAS</p>
+                  <p className="text-6xl md:text-7xl font-mono font-bold text-primary">R$ 19,90</p>
                 </div>
               </div>
             </div>
 
             {/* Bonuses */}
-            <div className="bg-card border-4 border-primary p-6 md:p-8 mb-6 md:mb-8">
-              <h3 className="text-xl md:text-2xl font-display font-bold text-center mb-4 md:mb-6">
+            <div className="bg-background border-4 border-primary p-8 mb-8">
+              <h3 className="text-2xl font-display font-bold text-center mb-6">
                 AO COMPRAR HOJE, VOCÊ GANHA <span className="text-primary">3 BÔNUS EXCLUSIVOS:</span>
               </h3>
               
-              <div className="space-y-3 md:space-y-4">
+              <div className="space-y-4">
                 {[
                   { title: "BÔNUS 1", description: "Resumos em áudio de cada capítulo!" },
                   { title: "BÔNUS 2", description: "Estudos de caso exclusivos sobre renda fixa e variável!" },
                   { title: "BÔNUS 3", description: "Exercícios de fixação para aprimorar o conhecimento!" }
                 ].map((bonus, idx) => (
-                  <div key={idx} className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-background border-l-4 border-primary">
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg md:text-xl flex-shrink-0">
+                  <div key={idx} className="flex items-center gap-4 p-4 bg-card border-l-4 border-primary">
+                    <div className="w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl flex-shrink-0">
                       {idx + 1}
                     </div>
                     <div>
-                      <p className="font-bold text-base md:text-lg">{bonus.title}</p>
-                      <p className="text-sm md:text-base text-muted-foreground">{bonus.description}</p>
+                      <p className="font-bold text-lg">{bonus.title}</p>
+                      <p className="text-muted-foreground">{bonus.description}</p>
                     </div>
                   </div>
                 ))}
@@ -436,34 +405,34 @@ export default function Home() {
             </div>
 
             {/* Guarantee */}
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 bg-card border-4 border-primary p-6 md:p-8 mb-6 md:mb-8">
+            <div className="flex flex-col md:flex-row items-center gap-8 bg-background border-4 border-primary p-8 mb-8">
               <img 
                 src="/images/invista-hoje-sales-page-guarantee.png" 
                 alt="Garantia 7 Dias" 
-                className="w-24 h-24 md:w-32 md:h-32"
+                className="w-32 h-32"
               />
               <div className="flex-1 text-center md:text-left">
-                <h3 className="text-xl md:text-2xl font-display font-bold mb-2">
+                <h3 className="text-2xl font-display font-bold mb-2">
                   <span className="text-primary">7 DIAS</span> DE GARANTIA!
                 </h3>
-                <p className="text-base md:text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed">
                   Seu dinheiro de volta, <strong>sem perguntas</strong>, em até 7 dias se não gostar do conteúdo!
                 </p>
               </div>
             </div>
 
-            {/* Main CTA Button */}
+            {/* CTA Button */}
             <Button 
               size="lg" 
-              className="w-full text-xl md:text-2xl px-8 md:px-12 py-8 md:py-10 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[12px_12px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[6px_6px_0px_0px_rgba(0,255,255,0.3)] transition-all mb-4 md:mb-6"
+              className="w-full text-2xl px-12 py-10 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[12px_12px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[6px_6px_0px_0px_rgba(0,255,255,0.3)] transition-all mb-6"
               asChild
             >
-              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+              <a href="https://pay.hotmart.com/your-checkout-link" target="_blank" rel="noopener noreferrer">
                 EU QUERO MEU EBOOK AGORA!
               </a>
             </Button>
 
-            <div className="text-center space-y-2 md:space-y-3 text-xs md:text-sm text-muted-foreground">
+            <div className="text-center space-y-3 text-sm text-muted-foreground">
               <div className="flex items-center justify-center gap-2">
                 <Shield className="w-4 h-4 text-primary" />
                 <p>Seus dados 100% protegidos</p>
@@ -482,24 +451,24 @@ export default function Home() {
       </section>
 
       {/* Device Compatibility */}
-      <section className="bg-card border-b-4 md:border-b-8 border-primary">
-        <div className="container py-12 md:py-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-3 md:mb-4 px-4">
+      <section className="bg-background border-b-8 border-primary">
+        <div className="container py-16 md:py-20">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-center mb-4">
             ACESSE EM QUALQUER DISPOSITIVO
           </h2>
-          <div className="h-2 w-20 md:w-24 bg-primary mx-auto mb-8 md:mb-12"></div>
+          <div className="h-2 w-24 bg-primary mx-auto mb-12"></div>
 
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+          <div className="flex flex-wrap justify-center gap-12">
             {[
               { icon: Smartphone, label: "Smartphone" },
               { icon: Tablet, label: "Tablet" },
               { icon: Monitor, label: "Computador" }
             ].map((device, idx) => (
               <div key={idx} className="text-center">
-                <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-3 md:mb-4 bg-background border-4 border-primary flex items-center justify-center">
-                  <device.icon className="w-10 h-10 md:w-12 md:h-12 text-primary" />
+                <div className="w-24 h-24 mx-auto mb-4 bg-card border-4 border-primary flex items-center justify-center">
+                  <device.icon className="w-12 h-12 text-primary" />
                 </div>
-                <p className="font-bold text-base md:text-lg">{device.label}</p>
+                <p className="font-bold text-lg">{device.label}</p>
               </div>
             ))}
           </div>
@@ -507,14 +476,14 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-background border-b-4 md:border-b-8 border-primary">
-        <div className="container py-12 md:py-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-3 md:mb-4 px-4">
+      <section className="bg-card border-b-8 border-primary">
+        <div className="container py-16 md:py-20">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-center mb-4">
             PERGUNTAS FREQUENTES
           </h2>
-          <div className="h-2 w-20 md:w-24 bg-primary mx-auto mb-8 md:mb-12"></div>
+          <div className="h-2 w-24 bg-primary mx-auto mb-12"></div>
 
-          <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
+          <div className="max-w-3xl mx-auto space-y-4">
             {[
               {
                 question: "O ebook foi escrito para qual público?",
@@ -539,20 +508,20 @@ export default function Home() {
             ].map((faq, idx) => (
               <Card 
                 key={idx} 
-                className="bg-card border-4 border-muted hover:border-primary transition-colors cursor-pointer"
+                className="bg-background border-4 border-muted hover:border-primary transition-colors cursor-pointer"
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
               >
-                <div className="p-4 md:p-6">
+                <div className="p-6">
                   <div className="flex items-center justify-between gap-4">
-                    <h3 className="font-bold text-base md:text-lg flex-1">{faq.question}</h3>
+                    <h3 className="font-bold text-lg flex-1">{faq.question}</h3>
                     <ChevronDown 
-                      className={`w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0 transition-transform ${
+                      className={`w-6 h-6 text-primary flex-shrink-0 transition-transform ${
                         openFaq === idx ? 'rotate-180' : ''
                       }`}
                     />
                   </div>
                   {openFaq === idx && (
-                    <p className="mt-3 md:mt-4 text-sm md:text-base text-muted-foreground leading-relaxed border-t-2 border-primary pt-3 md:pt-4">
+                    <p className="mt-4 text-muted-foreground leading-relaxed border-t-2 border-primary pt-4">
                       {faq.answer}
                     </p>
                   )}
@@ -560,26 +529,13 @@ export default function Home() {
               </Card>
             ))}
           </div>
-
-          {/* Final CTA after FAQ */}
-          <div className="text-center mt-8 md:mt-12">
-            <Button 
-              size="lg" 
-              className="w-full md:w-auto text-lg md:text-xl px-10 md:px-16 py-6 md:py-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[8px_8px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,255,255,0.3)] transition-all"
-              asChild
-            >
-              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
-                APROVEITAR OFERTA ESPECIAL AGORA!
-              </a>
-            </Button>
-          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-card border-t-4 border-primary">
-        <div className="container py-6 md:py-8 text-center">
-          <p className="text-xs md:text-sm text-muted-foreground">
+      <footer className="bg-background border-t-4 border-primary">
+        <div className="container py-8 text-center">
+          <p className="text-sm text-muted-foreground">
             Invista Hoje © 2025 - TODOS OS DIREITOS RESERVADOS
           </p>
           <p className="text-xs text-muted-foreground mt-2">
