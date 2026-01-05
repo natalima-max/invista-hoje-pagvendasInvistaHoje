@@ -360,9 +360,8 @@ export default function Home() {
                   </div>
                   
                   <p className="text-lg leading-relaxed text-muted-foreground">
-                    Natã dedica sua carreira a democratizar o acesso ao conhecimento sobre investimentos. 
-                    Formado em Economia e certificado como analista de investimentos, ele já ajudou milhares 
-                    de pessoas a saírem das dívidas e construírem patrimônio através de métodos práticos e descomplicados.
+                    Natã já ajudou centenas de pessoas a saírem das dívidas e construírem patrimônio através de métodos práticos e descomplicados. 
+                    Sua missão é democratizar o acesso ao conhecimento sobre investimentos, tornando-o acessível para todos.
                   </p>
 
                   <p className="text-lg leading-relaxed text-muted-foreground">
@@ -443,15 +442,15 @@ export default function Home() {
                 POR TEMPO LIMITADO!
               </div>
               
-              <div className="flex items-center justify-center gap-6 mb-6">
+              <div className="flex items-center justify-center gap-3 md:gap-6 mb-6 flex-wrap">
                 <div className="text-center">
-                  <p className="text-sm text-muted-foreground mb-2">DE</p>
-                  <p className="text-4xl font-mono font-bold line-through text-muted-foreground">R$ 37,00</p>
+                  <p className="text-xs md:text-sm text-muted-foreground mb-1 md:mb-2">DE</p>
+                  <p className="text-xl md:text-4xl font-mono font-bold line-through text-muted-foreground">R$ 37,00</p>
                 </div>
-                <div className="text-6xl text-primary">→</div>
+                <div className="text-3xl md:text-6xl text-primary">→</div>
                 <div className="text-center">
-                  <p className="text-sm text-primary mb-2">POR APENAS</p>
-                  <p className="text-6xl md:text-7xl font-mono font-bold text-primary">R$ 19,90</p>
+                  <p className="text-xs md:text-sm text-primary mb-1 md:mb-2">POR APENAS</p>
+                  <p className="text-3xl md:text-7xl font-mono font-bold text-primary">R$ 19,90</p>
                 </div>
               </div>
             </div>
@@ -535,17 +534,17 @@ export default function Home() {
           </h2>
           <div className="h-2 w-24 bg-primary mx-auto mb-12"></div>
 
-          <div className="flex flex-wrap justify-center gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-12 max-w-4xl mx-auto">
             {[
               { icon: Smartphone, label: "Smartphone" },
               { icon: Tablet, label: "Tablet" },
               { icon: Monitor, label: "Computador" }
             ].map((device, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-24 h-24 mx-auto mb-4 bg-card border-4 border-primary flex items-center justify-center">
-                  <device.icon className="w-12 h-12 text-primary" />
+              <div key={idx} className="text-center p-4 md:p-6 bg-card border-4 border-primary hover:shadow-lg transition-shadow">
+                <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 bg-primary/10 border-4 border-primary flex items-center justify-center">
+                  <device.icon className="w-10 h-10 md:w-12 md:h-12 text-primary" />
                 </div>
-                <p className="font-bold text-lg">{device.label}</p>
+                <p className="font-bold text-base md:text-lg text-primary">{device.label}</p>
               </div>
             ))}
           </div>
