@@ -170,11 +170,7 @@ export default function Home() {
         <div className="container py-16 md:py-24 relative z-10">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="order-2 md:order-1 hidden md:block">
-              <img 
-                src="/images/invista-hoje-sales-page-success.png" 
-                alt="Sucesso Financeiro" 
-                className="w-full h-auto border-4 border-primary shadow-[0_0_30px_rgba(0,255,255,0.3)]"
-              />
+              {/* Arrow image removed for cleaner layout */}
             </div>
             
             <div className="order-1 md:order-2 space-y-6 md:space-y-8">
