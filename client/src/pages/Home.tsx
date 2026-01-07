@@ -169,7 +169,7 @@ export default function Home() {
         </div>
         <div className="container py-16 md:py-24 relative z-10">
           <div className="grid md:grid-cols-1 gap-8 md:gap-12 items-center">
-            <div className="order-1 md:order-1 space-y-6 md:space-y-8 max-w-3xl mx-auto md:mx-0">
+            <div className="order-1 md:order-1 space-y-6 md:space-y-8 max-w-3xl mx-auto">
               <div>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-2">
                   INVISTA
