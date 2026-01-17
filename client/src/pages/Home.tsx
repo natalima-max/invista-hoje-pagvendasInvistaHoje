@@ -388,21 +388,21 @@ export default function Home() {
             {[
               {
                 name: "Fernanda Plansky",
-                role: "Investidora Iniciante",
-                content: "Finalmente consegui sair das dívidas seguindo o método do ebook! A linguagem é clara e os exercícios práticos me ajudaram a entender onde meu dinheiro estava indo. Em 3 meses já estava investindo em renda fixa.",
-                topic: "Organização Financeira"
+                role: "Consultora Financeira",
+                content: "O capítulo sobre Fundamentos foi excelente! Explicou de forma clara como o dinheiro realmente funciona e as armadilhas das dívidas. Recomendo para qualquer pessoa que quer entender o básico antes de investir.",
+                topic: "Capítulo 1: Fundamentos"
               },
               {
                 name: "Gabriel Soares",
-                role: "Analista de Sistemas",
-                content: "Sempre achei que investir era complicado demais. O Invista Hoje desmistificou tudo! Aprendi sobre custo de oportunidade e como a renda variável pode acelerar meu patrimônio. Excelente conteúdo!",
-                topic: "Renda Variável"
+                role: "Empresário",
+                content: "A parte sobre o Universo dos Investimentos é completa e bem estruturada. Aprendi sobre títulos públicos, ações e diversificação de forma prática. Conteúdo de qualidade que vale cada centavo.",
+                topic: "Capítulo 2: Investimentos"
               },
               {
                 name: "Malcolm de Mello",
-                role: "Empreendedor",
-                content: "Este guia mudou minha mentalidade sobre dinheiro. Os capítulos sobre títulos públicos e a jornada rumo ao milhão são ouro puro. Recomendo para qualquer pessoa que queira liberdade financeira de verdade.",
-                topic: "Estratégia de Longo Prazo"
+                role: "Desenvolvedor",
+                content: "O capítulo Prática Rumo ao Milhão é o diferencial! Os exercícios e cálculos práticos me ajudaram a criar meu plano de investimento. Finalmente tenho um guia claro para seguir.",
+                topic: "Capítulo 3: Prática"
               }
             ].map((testimonial, idx) => (
               <Card key={idx} className="p-6 bg-card border-4 border-muted hover:border-primary transition-colors">
