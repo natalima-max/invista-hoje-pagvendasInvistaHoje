@@ -6,10 +6,19 @@ import path from "path";
 import { defineConfig } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()];
+const plugins = [
+  react(),
+  tailwindcss(),
+  jsxLocPlugin(),
+  vitePluginManusRuntime(),
+];
 
 export default defineConfig({
+  // 🔑 ESSENCIAL PARA GITHUB PAGES
+  base: "/invista-hoje-pagvendasInvistaHoje/",
+
   plugins,
+
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -17,15 +26,21 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
+
   envDir: path.resolve(import.meta.dirname),
+
+  // seu projeto roda a partir da pasta client
   root: path.resolve(import.meta.dirname, "client"),
+
   build: {
+    // saída usada pelo workflow / Pages
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
+
   server: {
     port: 3000,
-    strictPort: false, // Will find next available port if 3000 is busy
+    strictPort: false,
     host: true,
     allowedHosts: [
       ".manuspre.computer",
