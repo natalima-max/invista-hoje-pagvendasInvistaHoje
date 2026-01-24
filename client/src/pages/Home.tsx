@@ -388,20 +388,20 @@ export default function Home() {
             {[
               {
                 name: "Fernanda Plansky",
-                role: "Consultora Financeira",
-                content: "O capítulo sobre Fundamentos foi excelente! Explicou de forma clara como o dinheiro realmente funciona e as armadilhas das dívidas. Recomendo para qualquer pessoa que quer entender o básico antes de investir.",
+                role: "Estudante",
+                content: "Eu sempre achei que investir era coisa de quem já era rico ou gênio da matemática. O Capítulo 1 me deu um 'estalo' enorme sobre o custo de oportunidade. Percebi que cada dia que eu deixava meu dinheiro parado, eu estava perdendo liberdade no futuro. O Natã explica de um jeito que parece que ele está conversando com a gente num café. Mudou totalmente minha visão sobre o que o dinheiro representa.",
                 topic: "Capítulo 1: Fundamentos"
               },
               {
                 name: "Gabriel Soares",
-                role: "Empresário",
-                content: "A parte sobre o Universo dos Investimentos é completa e bem estruturada. Aprendi sobre títulos públicos, ações e diversificação de forma prática. Conteúdo de qualidade que vale cada centavo.",
+                role: "Programador front-end",
+                content: "Sempre tive um pé atrás com a Bolsa, achava que era cassino. Mas a parte de Renda Variável do guia é muito pé no chão. Ele explica como se tornar sócio de grandes empresas de verdade, como a Vale ou o Itaú, e não apenas ficar olhando gráfico. Entendi finalmente como os dividendos funcionam na prática e como isso acelera o patrimônio. É o empurrão que faltava para eu sair só da poupança",
                 topic: "Capítulo 2: Investimentos"
               },
               {
                 name: "Malcolm de Mello",
-                role: "Desenvolvedor",
-                content: "O capítulo Prática Rumo ao Milhão é o diferencial! Os exercícios e cálculos práticos me ajudaram a criar meu plano de investimento. Finalmente tenho um guia claro para seguir.",
+                role: "Desenvolvedor de Software",
+                content: "Eu já tinha lido outros livros de educação financeira, mas sempre travava na hora de abrir a conta na corretora e escolher o primeiro ativo. O 'Mãos à Obra' (Capítulo 9) é o diferencial desse ebook. É um passo a passo real, sem enrolação. Fiz os exercícios, calculei minhas metas e finalmente tirei o plano do papel. Se você quer parar de estudar e começar a investir de verdade, esse é o guia.",
                 topic: "Capítulo 3: Prática"
               }
             ].map((testimonial, idx) => (
