@@ -388,21 +388,21 @@ export default function Home() {
             {[
               {
                 name: "Fernanda Plansky",
-                role: "Estudante",
-                content: "Eu sempre achei que investir era coisa de quem já era rico ou gênio da matemática. O Capítulo 1 me deu um 'estalo' enorme sobre o custo de oportunidade. Percebi que cada dia que eu deixava meu dinheiro parado, eu estava perdendo liberdade no futuro. O Natã explica de um jeito que parece que ele está conversando com a gente num café. Mudou totalmente minha visão sobre o que o dinheiro representa.",
-                topic: "Capítulo 1: Fundamentos"
+                role: "Investidora Iniciante",
+                content: "Finalmente consegui sair das dívidas seguindo o método do ebook! A linguagem é clara e os exercícios práticos me ajudaram a entender onde meu dinheiro estava indo. Em 3 meses já estava investindo em renda fixa.",
+                topic: "Organização Financeira"
               },
               {
                 name: "Gabriel Soares",
-                role: "Programador front-end",
-                content: "Sempre tive um pé atrás com a Bolsa, achava que era cassino. Mas a parte de Renda Variável do guia é muito pé no chão. Ele explica como se tornar sócio de grandes empresas de verdade, como a Vale ou o Itaú, e não apenas ficar olhando gráfico. Entendi finalmente como os dividendos funcionam na prática e como isso acelera o patrimônio. É o empurrão que faltava para eu sair só da poupança",
-                topic: "Capítulo 2: Investimentos"
+                role: "Analista de Sistemas",
+                content: "Sempre achei que investir era complicado demais. O Invista Hoje desmistificou tudo! Aprendi sobre custo de oportunidade e como a renda variável pode acelerar meu patrimônio. Excelente conteúdo!",
+                topic: "Renda Variável"
               },
               {
                 name: "Malcolm de Mello",
-                role: "Desenvolvedor de Software",
-                content: "Eu já tinha lido outros livros de educação financeira, mas sempre travava na hora de abrir a conta na corretora e escolher o primeiro ativo. O 'Mãos à Obra' (Capítulo 9) é o diferencial desse ebook. É um passo a passo real, sem enrolação. Fiz os exercícios, calculei minhas metas e finalmente tirei o plano do papel. Se você quer parar de estudar e começar a investir de verdade, esse é o guia.",
-                topic: "Capítulo 3: Prática"
+                role: "Empreendedor",
+                content: "Este guia mudou minha mentalidade sobre dinheiro. Os capítulos sobre títulos públicos e a jornada rumo ao milhão são ouro puro. Recomendo para qualquer pessoa que queira liberdade financeira de verdade.",
+                topic: "Estratégia de Longo Prazo"
               }
             ].map((testimonial, idx) => (
               <Card key={idx} className="p-6 bg-card border-4 border-muted hover:border-primary transition-colors">
