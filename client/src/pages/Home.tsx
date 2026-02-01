@@ -29,7 +29,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/O101016720K?off=ifylfz1r&hotfeature=51&_hi=eyJjaWQiOiIxNzM2MDQwODc2OTcxNzA3NTgyNTY2MzQ4ODgwMDAwIiwiYmlkIjoiMTczNjA0MDg3Njk3MTcwNzU4MjU2NjM0ODg4MDAwMCIsInNpZCI6IjgyYzU5ODRmYjQ3NDQzMDhiNjMzNDBmYTQzNWY2MzFlIn0.1767495396013";
+const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/O101016720K?checkoutMode=10";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
