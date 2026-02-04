@@ -35,11 +35,16 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
-    // Track ViewContent on page load
-    if (typeof window !== 'undefined' && typeof (window as any).fbq !== 'undefined') {
+  const interval = setInterval(() => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'ViewContent');
+      clearInterval(interval);
     }
-  }, []);
+  }, 300); // tenta a cada 300ms até o pixel carregar
+
+  return () => clearInterval(interval);
+}, []);
+
 
   const scrollToPrice = () => {
     document.getElementById('price-section')?.scrollIntoView({ behavior: 'smooth' });
@@ -48,22 +53,9 @@ export default function Home() {
   const trackCheckoutEvent = () => {
     if (typeof window !== 'undefined' && typeof (window as any).fbq !== 'undefined') {
       (window as any).fbq('track', 'InitiateCheckout');
-      (window as any).fbq('track', 'AddToCart');
-      (window as any).fbq('track', 'AddPaymentInfo');
     }
   };
 
-  const trackViewContent = () => {
-    if (typeof window !== 'undefined' && typeof (window as any).fbq !== 'undefined') {
-      (window as any).fbq('track', 'ViewContent');
-    }
-  };
-
-  const trackLead = () => {
-    if (typeof window !== 'undefined' && typeof (window as any).fbq !== 'undefined') {
-      (window as any).fbq('track', 'Lead');
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
