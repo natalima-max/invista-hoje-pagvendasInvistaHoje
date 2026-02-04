@@ -27,15 +27,42 @@ import {
   Award,
   Briefcase
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/O101016720K?checkoutMode=10";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  useEffect(() => {
+    // Track ViewContent on page load
+    if (typeof window !== 'undefined' && typeof (window as any).fbq !== 'undefined') {
+      (window as any).fbq('track', 'ViewContent');
+    }
+  }, []);
+
   const scrollToPrice = () => {
     document.getElementById('price-section')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const trackCheckoutEvent = () => {
+    if (typeof window !== 'undefined' && typeof (window as any).fbq !== 'undefined') {
+      (window as any).fbq('track', 'InitiateCheckout');
+      (window as any).fbq('track', 'AddToCart');
+      (window as any).fbq('track', 'AddPaymentInfo');
+    }
+  };
+
+  const trackViewContent = () => {
+    if (typeof window !== 'undefined' && typeof (window as any).fbq !== 'undefined') {
+      (window as any).fbq('track', 'ViewContent');
+    }
+  };
+
+  const trackLead = () => {
+    if (typeof window !== 'undefined' && typeof (window as any).fbq !== 'undefined') {
+      (window as any).fbq('track', 'Lead');
+    }
   };
 
   return (
@@ -71,10 +98,10 @@ export default function Home() {
               </div>
 
               {/* Mobile Image - Below Title */}
-              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="relative md:hidden block">
+              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={trackCheckoutEvent} className="relative md:hidden block">
                 <div className="border-4 border-primary p-2 bg-card max-w-xs hover:opacity-90 transition-opacity">
                   <img 
-                    src="/images/invista-hoje-sales-page-hero.png" 
+                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663277020619/muOFDXRHnzWruYQz.png" 
                     alt="Ebook Invista Hoje" 
                     className="w-full h-auto"
                   />
@@ -114,10 +141,10 @@ export default function Home() {
             </div>
 
             {/* Desktop Image - Right Side */}
-            <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="relative hidden md:block">
+            <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={trackCheckoutEvent} className="relative hidden md:block">
               <div className="border-4 md:border-8 border-primary p-2 md:p-4 bg-card hover:opacity-90 transition-opacity">
                 <img 
-                  src="/images/invista-hoje-sales-page-hero.png" 
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663277020619/muOFDXRHnzWruYQz.png" 
                   alt="Ebook Invista Hoje" 
                   className="w-full h-auto"
                 />
@@ -260,7 +287,7 @@ export default function Home() {
                 className="w-full md:w-auto text-lg md:text-xl px-10 md:px-16 py-6 md:py-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[8px_8px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,255,255,0.3)] transition-all"
                 asChild
               >
-                <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+                <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={trackCheckoutEvent}>
                   COMEÇAR MINHA JORNADA AGORA!
                 </a>
               </Button>
@@ -475,7 +502,7 @@ export default function Home() {
             {/* Guarantee */}
             <div className="flex flex-col md:flex-row items-center gap-8 bg-background border-4 border-primary p-8 mb-8">
               <img 
-                src="/images/invista-hoje-sales-page-guarantee.png" 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663277020619/wXnhmtKYWPiYdxWS.png" 
                 alt="Garantia 7 Dias" 
                 className="w-32 h-32"
               />
@@ -495,7 +522,7 @@ export default function Home() {
               className="w-full text-2xl px-12 py-10 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[12px_12px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[6px_6px_0px_0px_rgba(0,255,255,0.3)] transition-all mb-6"
               asChild
             >
-              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={trackCheckoutEvent}>
                 EU QUERO MEU EBOOK AGORA!
               </a>
             </Button>
