@@ -59,7 +59,7 @@ export default function Home() {
           <div className="flex items-center gap-1 sm:gap-2 md:gap-3 min-w-0 flex-1">
             <Clock className="w-4 h-4 md:w-5 md:h-5 text-primary animate-pulse flex-shrink-0" />
             <p className="text-xs sm:text-sm md:text-base font-mono font-bold text-white truncate sm:truncate md:text-left">
-              ⚡ PROMOÇÃO: Apenas <span className="text-primary">10 ebooks</span> restantes!
+              ⚡ Promoção: de 37 por <span className="text-primary">19,90</span>. Tempo limitado
             </p>
           </div>
           <Badge variant="outline" className="bg-primary text-primary-foreground border-primary font-mono text-xs md:text-sm px-2 md:px-3 py-1 flex-shrink-0">
