@@ -47,7 +47,16 @@ export default function Home() {
 
 
   const scrollToPrice = () => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout');
+    }
     document.getElementById('price-section')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleCheckoutClick = () => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout');
+    }
   };
 
 
@@ -84,7 +93,7 @@ export default function Home() {
               </div>
 
               {/* Mobile Image - Below Title */}
-              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="relative md:hidden block">
+              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="relative md:hidden block" onClick={handleCheckoutClick}>
                 <div className="border-4 border-primary p-2 bg-card max-w-xs hover:opacity-90 transition-opacity">
                   <img 
                     src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663277020619/muOFDXRHnzWruYQz.png" 
@@ -127,7 +136,7 @@ export default function Home() {
             </div>
 
             {/* Desktop Image - Right Side */}
-             <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="relative hidden md:block">
+             <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="relative hidden md:block" onClick={handleCheckoutClick}>
               <div className="border-4 md:border-8 border-primary p-2 md:p-4 bg-card hover:opacity-90 transition-opacity">
                 <img 
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663277020619/muOFDXRHnzWruYQz.png" 
@@ -273,7 +282,7 @@ export default function Home() {
                 className="w-full md:w-auto text-lg md:text-xl px-10 md:px-16 py-6 md:py-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[8px_8px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,255,255,0.3)] transition-all"
                 asChild
               >
-                <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+                <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={handleCheckoutClick}>
                   COMEÇAR MINHA JORNADA AGORA!
                 </a>
               </Button>
@@ -508,7 +517,7 @@ export default function Home() {
               className="w-full text-2xl px-12 py-10 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[12px_12px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[6px_6px_0px_0px_rgba(0,255,255,0.3)] transition-all mb-6"
               asChild
             >
-              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={handleCheckoutClick}>
                 EU QUERO MEU EBOOK AGORA!
               </a>
             </Button>
