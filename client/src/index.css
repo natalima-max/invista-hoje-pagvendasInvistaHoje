@@ -44,15 +44,15 @@
 
 :root {
   /* Brutalist Financial Design System */
-  --primary: oklch(0.85 0.18 195); /* Electric Cyan - closer to #00FFFF */
+  --primary: #2f5864; /* Green - #2f5864 */
   --primary-foreground: oklch(0.1 0 0); /* Deep Black */
-  --sidebar-primary: oklch(0.4 0.08 200);
+  --sidebar-primary: #2f5864;
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --chart-1: oklch(0.85 0.18 195);
-  --chart-2: oklch(0.5 0.1 200);
-  --chart-3: oklch(0.4 0.08 200);
-  --chart-4: oklch(0.3 0.06 200);
-  --chart-5: oklch(0.2 0.04 200);
+  --chart-1: #2f5864;
+  --chart-2: #3d6b7a;
+  --chart-3: #4a7f8f;
+  --chart-4: #5793a4;
+  --chart-5: #64a7b9;
   --radius: 0rem; /* Sharp edges for brutalism */
   --background: oklch(0.1 0 0); /* Deep Black */
   --foreground: oklch(0.98 0 0); /* Pure White */
@@ -60,23 +60,23 @@
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.1 0 0);
   --popover-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.3 0.06 200); /* Teal */
+  --secondary: #2f5864; /* Green */
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.25 0.04 200);
   --muted-foreground: oklch(0.7 0.05 200);
-  --accent: oklch(0.7 0.15 200); /* Cyan */
+  --accent: #2f5864; /* Green */
   --accent-foreground: oklch(0.1 0 0);
   --destructive: oklch(0.6 0.2 30);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.85 0.18 195); /* Cyan borders */
+  --border: #2f5864; /* Green borders */
   --input: oklch(0.2 0.04 200);
-  --ring: oklch(0.85 0.18 195);
+  --ring: #2f5864;
   --sidebar: oklch(0.1 0 0);
   --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.3 0.06 200);
+  --sidebar-accent: #2f5864;
   --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(0.85 0.18 195);
-  --sidebar-ring: oklch(0.85 0.18 195);
+  --sidebar-border: #2f5864;
+  --sidebar-ring: #2f5864;
   
   /* Custom fonts */
   --font-display: 'Space Grotesk', sans-serif;
