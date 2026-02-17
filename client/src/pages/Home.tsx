@@ -129,9 +129,11 @@ export default function Home() {
               <Button 
                 size="lg" 
                 className="w-full md:w-auto text-sm md:text-xl px-4 md:px-12 py-4 md:py-8 bg-primary hover:bg-primary/90 text-primary-foreground font-bold border-4 border-primary shadow-[8px_8px_0px_0px_rgba(0,255,255,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,255,255,0.3)] transition-all"
-                onClick={scrollToPrice}
+                asChild
               >
-                SIM! EU QUERO LIBERDADE FINANCEIRA!
+                <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={handleCheckoutClick}>
+                  SIM! EU QUERO LIBERDADE FINANCEIRA!
+                </a>
               </Button>
             </div>
 
