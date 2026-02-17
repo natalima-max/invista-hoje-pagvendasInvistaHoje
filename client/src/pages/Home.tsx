@@ -25,7 +25,11 @@ import {
   Tablet,
   Monitor,
   Award,
-  Briefcase
+  Briefcase,
+  Mail,
+  CreditCard,
+  Printer,
+  FileText
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -579,47 +583,62 @@ export default function Home() {
             {[
               {
                 question: "O ebook foi escrito para qual público?",
-                answer: "O Invista Hoje foi criado especialmente para iniciantes que nunca investiram ou têm pouco conhecimento sobre o mercado financeiro. Se você quer sair das dívidas e começar a construir patrimônio, este guia é para você!"
+                answer: "O Invista Hoje foi criado especialmente para iniciantes que nunca investiram ou têm pouco conhecimento sobre o mercado financeiro. Se você quer sair das dívidas e começar a construir patrimônio, este guia é para você!",
+                icon: BookOpen
               },
               {
                 question: "Não estou achando o email com os dados de acesso ao ebook, o que eu faço?",
-                answer: "Verifique sua caixa de spam ou lixo eletrônico. O email vem de 'Hotmart' com o assunto contendo 'Invista Hoje'. Se ainda não encontrar, entre em contato com o suporte da Hotmart através da área de compras."
+                answer: "Verifique sua caixa de spam ou lixo eletrônico. O email vem de 'Hotmart' com o assunto contendo 'Invista Hoje'. Se ainda não encontrar, entre em contato com o suporte da Hotmart através da área de compras.",
+                icon: Mail
               },
               {
                 question: "Comprei o ebook por boleto, quanto tempo demora para reconhecer a compra?",
-                answer: "Pagamentos por boleto podem levar até 3 dias úteis para serem confirmados pelo banco. Assim que o pagamento for identificado, você receberá automaticamente o acesso ao ebook por email."
+                answer: "Pagamentos por boleto podem levar até 3 dias úteis para serem confirmados pelo banco. Assim que o pagamento for identificado, você receberá automaticamente o acesso ao ebook por email.",
+                icon: CreditCard
               },
               {
                 question: "Imprimi o ebook e ele ficou menor do que a folha. E agora?",
-                answer: "Nas configurações de impressão, ajuste a opção de escala para 'Ajustar à página' ou '100%'. Certifique-se de que a orientação está em 'Retrato' e o tamanho do papel é A4."
+                answer: "Nas configurações de impressão, ajuste a opção de escala para 'Ajustar à página' ou '100%'. Certifique-se de que a orientação está em 'Retrato' e o tamanho do papel é A4.",
+                icon: Printer
               },
               {
                 question: "Não estou conseguindo abrir o ebook, o que eu faço?",
-                answer: "O ebook está em formato PDF. Certifique-se de ter um leitor de PDF instalado (Adobe Reader, Foxit, ou visualizador do navegador). Se o problema persistir, tente baixar novamente o arquivo através do link no email de confirmação."
+                answer: "O ebook está em formato PDF. Certifique-se de ter um leitor de PDF instalado (Adobe Reader, Foxit, ou visualizador do navegador). Se o problema persistir, tente baixar novamente o arquivo através do link no email de confirmação.",
+                icon: FileText
               }
-            ].map((faq, idx) => (
-              <Card 
-                key={idx} 
-                className="bg-background border-4 border-muted hover:border-primary transition-colors cursor-pointer"
-                onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-              >
-                <div className="p-6">
-                  <div className="flex items-center justify-between gap-4">
-                    <h3 className="font-bold text-lg flex-1">{faq.question}</h3>
-                    <ChevronDown 
-                      className={`w-6 h-6 text-primary flex-shrink-0 transition-transform ${
-                        openFaq === idx ? 'rotate-180' : ''
-                      }`}
-                    />
+            ].map((faq, idx) => {
+              const IconComponent = faq.icon;
+              return (
+                <Card 
+                  key={idx} 
+                  className="bg-background border-4 border-muted hover:border-primary hover:shadow-[0_0_20px_rgba(47,88,100,0.3)] transition-all duration-300 cursor-pointer"
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                >
+                  <div className="p-6">
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-4 flex-1">
+                        <div className="w-12 h-12 bg-primary/20 border-2 border-primary flex items-center justify-center flex-shrink-0 rounded">
+                          <IconComponent className="w-6 h-6 text-primary" />
+                        </div>
+                        <h3 className="font-bold text-lg">{faq.question}</h3>
+                      </div>
+                      <ChevronDown 
+                        className={`w-6 h-6 text-primary flex-shrink-0 transition-transform duration-300 ${
+                          openFaq === idx ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </div>
+                    {openFaq === idx && (
+                      <div className="mt-4 animate-in fade-in duration-300">
+                        <p className="text-muted-foreground leading-relaxed border-t-2 border-primary pt-4">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    )}
                   </div>
-                  {openFaq === idx && (
-                    <p className="mt-4 text-muted-foreground leading-relaxed border-t-2 border-primary pt-4">
-                      {faq.answer}
-                    </p>
-                  )}
-                </div>
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
