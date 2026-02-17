@@ -37,6 +37,36 @@ const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/O101016720K?checkoutMode=1
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const testimonials = [
+    {
+      name: "Fernanda Plansky",
+      role: "Investidora Iniciante",
+      content: "Finalmente consegui sair das dívidas seguindo o método do ebook! A linguagem é clara e os exercícios práticos me ajudaram a entender onde meu dinheiro estava indo. Em 3 meses já estava investindo em renda fixa.",
+      topic: "Organização Financeira"
+    },
+    {
+      name: "Gabriel Soares",
+      role: "Analista de Sistemas",
+      content: "Sempre achei que investir era complicado demais. O Invista Hoje desmistificou tudo! Aprendi sobre custo de oportunidade e como a renda variável pode acelerar meu patrimônio. Excelente conteúdo!",
+      topic: "Renda Variável"
+    },
+    {
+      name: "Malcolm de Mello",
+      role: "Empreendedor",
+      content: "Este guia mudou minha mentalidade sobre dinheiro. Os capítulos sobre títulos públicos e a jornada rumo ao milhão são ouro puro. Recomendo para qualquer pessoa que queira liberdade financeira de verdade.",
+      topic: "Estratégia de Longo Prazo"
+    }
+  ];
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
   useEffect(() => {
   const interval = setInterval(() => {
@@ -412,7 +442,82 @@ export default function Home() {
           </h2>
           <div className="h-2 w-24 bg-primary mx-auto mb-12"></div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Carousel for Mobile/Tablet, Grid for Desktop */}
+          <div className="max-w-6xl mx-auto">
+            {/* Desktop Grid View */}
+            <div className="hidden md:grid grid-cols-3 gap-8">
+              {testimonials.map((testimonial, idx) => (
+                <Card key={idx} className="p-6 bg-card border-4 border-muted hover:border-primary transition-colors">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-lg leading-relaxed mb-6 italic">\"{testimonial.content}\"</p>
+                  <div className="border-t-2 border-primary pt-4">
+                    <p className="font-bold text-lg">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    <Badge className="mt-2 bg-primary/20 text-primary border-primary">
+                      {testimonial.topic}
+                    </Badge>
+                  </div>
+                </Card>
+              ))}
+            </div>
+
+            {/* Mobile/Tablet Carousel View */}
+            <div className="md:hidden">
+              <div className="relative">
+                <Card className="p-8 bg-card border-4 border-primary animate-in fade-in duration-300">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-lg leading-relaxed mb-6 italic">\"{testimonials[currentTestimonial].content}\"</p>
+                  <div className="border-t-2 border-primary pt-4">
+                    <p className="font-bold text-lg">{testimonials[currentTestimonial].name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonials[currentTestimonial].role}</p>
+                    <Badge className="mt-2 bg-primary/20 text-primary border-primary">
+                      {testimonials[currentTestimonial].topic}
+                    </Badge>
+                  </div>
+                </Card>
+
+                {/* Navigation Buttons */}
+                <div className="flex items-center justify-between gap-4 mt-6">
+                  <Button
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground border-2 border-primary"
+                    onClick={prevTestimonial}
+                  >
+                    ← Anterior
+                  </Button>
+                  <div className="flex gap-2">
+                    {testimonials.map((_, idx) => (
+                      <button
+                        key={idx}
+                        className={`w-3 h-3 rounded-full transition-colors ${
+                          idx === currentTestimonial ? 'bg-primary' : 'bg-muted'
+                        }`}
+                        onClick={() => setCurrentTestimonial(idx)}
+                      />
+                    ))}
+                  </div>
+                  <Button
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground border-2 border-primary"
+                    onClick={nextTestimonial}
+                  >
+                    Próximo →
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Old Grid Code - Removed */}
+          <div className="hidden">
             {[
               {
                 name: "Fernanda Plansky",
@@ -439,7 +544,7 @@ export default function Home() {
                     <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                   ))}
                 </div>
-                <p className="text-lg leading-relaxed mb-6 italic">"{testimonial.content}"</p>
+                <p className="text-lg leading-relaxed mb-6 italic">\"{testimonial.content}\"</p>
                 <div className="border-t-2 border-primary pt-4">
                   <p className="font-bold text-lg">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
