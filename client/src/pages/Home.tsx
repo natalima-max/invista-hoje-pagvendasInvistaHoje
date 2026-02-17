@@ -31,34 +31,37 @@ import {
   Printer,
   FileText
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/O101016720K?checkoutMode=10";
+
+// Memoized testimonials data - moved outside component to prevent recreation
+const TESTIMONIALS_DATA = [
+  {
+    name: "Fernanda Plansky",
+    role: "Investidora Iniciante",
+    content: "Finalmente consegui sair das dívidas seguindo o método do ebook! A linguagem é clara e os exercícios práticos me ajudaram a entender onde meu dinheiro estava indo. Em 3 meses já estava investindo em renda fixa.",
+    topic: "Organização Financeira"
+  },
+  {
+    name: "Gabriel Soares",
+    role: "Analista de Sistemas",
+    content: "Sempre achei que investir era complicado demais. O Invista Hoje desmistificou tudo! Aprendi sobre custo de oportunidade e como a renda variável pode acelerar meu patrimônio. Excelente conteúdo!",
+    topic: "Renda Variável"
+  },
+  {
+    name: "Malcolm de Mello",
+    role: "Empreendedor",
+    content: "Este guia mudou minha mentalidade sobre dinheiro. Os capítulos sobre títulos públicos e a jornada rumo ao milhão são ouro puro. Recomendo para qualquer pessoa que queira liberdade financeira de verdade.",
+    topic: "Estratégia de Longo Prazo"
+  }
+];
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-  const testimonials = [
-    {
-      name: "Fernanda Plansky",
-      role: "Investidora Iniciante",
-      content: "Finalmente consegui sair das dívidas seguindo o método do ebook! A linguagem é clara e os exercícios práticos me ajudaram a entender onde meu dinheiro estava indo. Em 3 meses já estava investindo em renda fixa.",
-      topic: "Organização Financeira"
-    },
-    {
-      name: "Gabriel Soares",
-      role: "Analista de Sistemas",
-      content: "Sempre achei que investir era complicado demais. O Invista Hoje desmistificou tudo! Aprendi sobre custo de oportunidade e como a renda variável pode acelerar meu patrimônio. Excelente conteúdo!",
-      topic: "Renda Variável"
-    },
-    {
-      name: "Malcolm de Mello",
-      role: "Empreendedor",
-      content: "Este guia mudou minha mentalidade sobre dinheiro. Os capítulos sobre títulos públicos e a jornada rumo ao milhão são ouro puro. Recomendo para qualquer pessoa que queira liberdade financeira de verdade.",
-      topic: "Estratégia de Longo Prazo"
-    }
-  ];
+  const testimonials = useMemo(() => TESTIMONIALS_DATA, []);
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -69,15 +72,24 @@ export default function Home() {
   };
 
   useEffect(() => {
-  const interval = setInterval(() => {
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'ViewContent');
-      clearInterval(interval);
-    }
-  }, 300); // tenta a cada 300ms até o pixel carregar
-
-  return () => clearInterval(interval);
-}, []);
+    let interval: NodeJS.Timeout;
+    let attempts = 0;
+    const maxAttempts = 20;
+    
+    const checkPixel = () => {
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'ViewContent');
+        clearInterval(interval);
+      } else if (attempts < maxAttempts) {
+        attempts++;
+      } else {
+        clearInterval(interval);
+      }
+    };
+    
+    interval = setInterval(checkPixel, 500);
+    return () => clearInterval(interval);
+  }, []);
 
 
   const scrollToPrice = () => {
