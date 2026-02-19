@@ -33,7 +33,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect, useMemo } from "react";
 
-const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/O101016720K?checkoutMode=10";
+const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/O101016720K?off=ifylfz1r&hotfeature=51";
 
 // Memoized testimonials data - moved outside component to prevent recreation
 const TESTIMONIALS_DATA = [
