@@ -38,22 +38,22 @@ const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/O101016720K?off=ifylfz1r&h
 // Memoized testimonials data - moved outside component to prevent recreation
 const TESTIMONIALS_DATA = [
   {
-    name: "Fernanda Plansky",
-    role: "Investidora Iniciante",
-    content: "Finalmente consegui sair das dívidas seguindo o método do ebook! A linguagem é clara e os exercícios práticos me ajudaram a entender onde meu dinheiro estava indo. Em 3 meses já estava investindo em renda fixa.",
-    topic: "Organização Financeira"
+    name: "Fernanda Oliveira",
+    role: "Gerente de Projetos, São Paulo",
+    content: "Antes de ler o Invista Hoje eu tinha R$ 8 mil parado em conta corrente e não sabia o que fazer. Tinha medo de perder dinheiro investindo. Depois de ler o Capítulo 2 sobre Renda Fixa, entendi como funciona o Tesouro Direto e abri minha primeira aplicação em títulos públicos na mesma semana. Hoje já tenho R$ 25 mil investidos e durmo tranquila sabendo que meu dinheiro está crescendo. Indico para qualquer amiga que quer começar a investir sem complicação.",
+    topic: "Renda Fixa e Tesouro Direto"
   },
   {
-    name: "Gabriel Soares",
-    role: "Analista de Sistemas",
-    content: "Sempre achei que investir era complicado demais. O Invista Hoje desmistificou tudo! Aprendi sobre custo de oportunidade e como a renda variável pode acelerar meu patrimônio. Excelente conteúdo!",
-    topic: "Renda Variável"
+    name: "Gabriel Martins",
+    role: "Desenvolvedor, Belo Horizonte",
+    content: "Eu achava que investir era coisa de rico ou que precisava de muito dinheiro para começar. Tinha R$ 2 mil na poupança e ganhava bem, mas não sabia como fazer meu dinheiro render. Depois de ler o Capítulo 1 sobre Fundamentos e o Capítulo 3 com o passo a passo prático, consegui montar minha primeira carteira diversificada com apenas R$ 3 mil. Em 6 meses já tenho R$ 4.2 mil. Recomendo para todo programador que ganha bem mas não sabe investir.",
+    topic: "Diversificação e Primeiros Passos"
   },
   {
-    name: "Malcolm de Mello",
-    role: "Empreendedor",
-    content: "Este guia mudou minha mentalidade sobre dinheiro. Os capítulos sobre títulos públicos e a jornada rumo ao milhão são ouro puro. Recomendo para qualquer pessoa que queira liberdade financeira de verdade.",
-    topic: "Estratégia de Longo Prazo"
+    name: "Malcolm de Souza",
+    role: "Empresário, Rio de Janeiro",
+    content: "Eu tinha dívidas no cartão de crédito e não conseguia sair daquele ciclo. Ganhava bem mas gastava tudo. Depois de ler o Capítulo 1 sobre Sair do Ciclo das Dívidas e entender o conceito de custo de oportunidade, consegui eliminar R$ 15 mil em dívidas em 8 meses. Agora estou usando o Capítulo 2 para investir o dinheiro que antes ia para juros. Indico para todo empreendedor que quer construir patrimônio de verdade.",
+    topic: "Eliminação de Dívidas e Patrimônio"
   }
 ];
 
