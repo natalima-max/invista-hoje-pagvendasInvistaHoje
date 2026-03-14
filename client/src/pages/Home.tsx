@@ -38,22 +38,22 @@ const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/O101016720K?off=ifylfz1r&h
 // Memoized testimonials data - moved outside component to prevent recreation
 const TESTIMONIALS_DATA = [
   {
-    name: "Fernanda Oliveira",
-    role: "Gerente de Projetos, São Paulo",
-    content: "Antes de ler o Invista Hoje eu tinha R$ 8 mil parado em conta corrente e não sabia o que fazer. Tinha medo de perder dinheiro investindo. Depois de ler o Capítulo 2 sobre Renda Fixa, entendi como funciona o Tesouro Direto e abri minha primeira aplicação em títulos públicos na mesma semana. Hoje já tenho R$ 25 mil investidos e durmo tranquila sabendo que meu dinheiro está crescendo. Indico para qualquer amiga que quer começar a investir sem complicação.",
-    topic: "Renda Fixa e Tesouro Direto"
+    name: "Fernanda Silva",
+    role: "Estudante, 19 anos, São Paulo",
+    content: "Antes de ler o Invista Hoje, eu não entendia nada sobre economia. Achava que investimento era coisa complicada e só para gente rica. Depois de ler o Capítulo 1 sobre Fundamentos, consegui entender como o dinheiro realmente funciona na prática — conceitos que nunca tinha visto na escola. Agora consigo ter conversas mais inteligentes sobre finanças com meus pais e amigos. Indico para todo jovem que quer começar a entender sobre dinheiro desde cedo.",
+    topic: "Educação Financeira Básica"
   },
   {
-    name: "Gabriel Martins",
-    role: "Desenvolvedor, Belo Horizonte",
-    content: "Eu achava que investir era coisa de rico ou que precisava de muito dinheiro para começar. Tinha R$ 2 mil na poupança e ganhava bem, mas não sabia como fazer meu dinheiro render. Depois de ler o Capítulo 1 sobre Fundamentos e o Capítulo 3 com o passo a passo prático, consegui montar minha primeira carteira diversificada com apenas R$ 3 mil. Em 6 meses já tenho R$ 4.2 mil. Recomendo para todo programador que ganha bem mas não sabe investir.",
-    topic: "Diversificação e Primeiros Passos"
+    name: "Gabriel Rocha",
+    role: "Programador Front-end, 21 anos, São Paulo",
+    content: "Como desenvolvedor, eu entendia código, mas não entendia investimentos. Achava que era tudo muito teórico e desconectado da realidade. Depois de ler o Capítulo 3 com o guia prático passo a passo, consegui ver investimento como um projeto real — com objetivos claros e execução prática. A forma como o ebook explica é parecida com como a gente pensa em desenvolvimento. Recomendo para todo programador que quer aprender sobre investimentos de um jeito que faz sentido.",
+    topic: "Investimento como Projeto Prático"
   },
   {
-    name: "Malcolm de Souza",
-    role: "Empresário, Rio de Janeiro",
-    content: "Eu tinha dívidas no cartão de crédito e não conseguia sair daquele ciclo. Ganhava bem mas gastava tudo. Depois de ler o Capítulo 1 sobre Sair do Ciclo das Dívidas e entender o conceito de custo de oportunidade, consegui eliminar R$ 15 mil em dívidas em 8 meses. Agora estou usando o Capítulo 2 para investir o dinheiro que antes ia para juros. Indico para todo empreendedor que quer construir patrimônio de verdade.",
-    topic: "Eliminação de Dívidas e Patrimônio"
+    name: "Malcolm Costa",
+    role: "Programador Backend, 21 anos, São Paulo",
+    content: "Eu sempre achei que investimento era arriscado demais e que era melhor deixar o dinheiro na poupança. Depois de ler o Capítulo 2 sobre Renda Fixa e Renda Variável, entendi a diferença entre os tipos de investimento e como cada um funciona. Aprendi que risco não significa perda garantida — é sobre entender o que você está fazendo. Indico para qualquer programador que quer entender investimentos sem medo e de forma técnica.",
+    topic: "Compreensão de Riscos e Investimentos"
   }
 ];
 
