@@ -119,7 +119,7 @@ export default function Home() {
           </div>
           <Badge variant="outline" className="bg-primary text-primary-foreground border-primary font-mono text-xs md:text-sm px-2 md:px-3 py-1 flex-shrink-0">
             <Users className="w-3 h-3 md:w-4 md:h-4 mr-1" />
-            150+
+            +150 leitores já organizaram suas finanças
           </Badge>
         </div>
       </div>
@@ -153,8 +153,10 @@ export default function Home() {
               </a>
               
               <p className="text-base md:text-2xl text-muted-foreground leading-relaxed">
-                Saia das dívidas e alcance o <span className="text-primary font-bold">primeiro milhão</span> — 
-                mesmo que você nunca tenha investido antes.
+                Aprenda a investir do zero — sem jargão, sem enrolação, sem precisar de muito dinheiro para começar
+              </p>
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
+                Um guia completo e direto ao ponto para quem quer organizar as finanças e dar os primeiros passos nos investimentos — mesmo começando do absoluto zero
               </p>
 
               <div className="space-y-2 md:space-y-3">
@@ -178,7 +180,7 @@ export default function Home() {
                 asChild
               >
                 <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={handleCheckoutClick}>
-                  SIM! EU QUERO LIBERDADE FINANCEIRA!
+                  QUERO O EBOOK POR R$ 19,90 →
                 </a>
               </Button>
             </div>
@@ -225,7 +227,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <p className="text-2xl md:text-3xl font-display font-bold text-primary">
-              SE VOCÊ RESPONDEU "SIM" PARA ALGUMAS DESSAS PERGUNTAS...
+              Se você se identificou com pelo menos uma dessas situações, o Invista Hoje foi escrito para você — do zero, na linguagem que faltou na sua educação financeira.
             </p>
           </div>
         </div>
@@ -331,7 +333,7 @@ export default function Home() {
                 asChild
               >
                 <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={handleCheckoutClick}>
-                  COMEÇAR MINHA JORNADA AGORA!
+                  QUERO O EBOOK POR R$ 19,90 →
                 </a>
               </Button>
             </div>
@@ -575,6 +577,10 @@ export default function Home() {
         <div className="container py-16 md:py-20">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+                Cursos de educação financeira custam entre R$ 300 e R$ 2.000. Consultorias financeiras, R$ 200 por hora. O Invista Hoje entrega o essencial que você precisa para começar — por R$ 19,90 e acesso para sempre.
+              </p>
+              
               <div className="inline-block bg-destructive text-white px-8 py-3 font-mono font-bold text-xl mb-6 border-4 border-primary">
                 POR TEMPO LIMITADO!
               </div>
@@ -590,6 +596,10 @@ export default function Home() {
                   <p className="text-3xl md:text-7xl font-mono font-bold text-primary">R$ 19,90</p>
                 </div>
               </div>
+              
+              <p className="text-sm text-muted-foreground mt-4">
+                Pagamento único · Acesso imediato · Lê no celular, tablet ou computador
+              </p>
             </div>
 
             {/* Bonuses */}
@@ -598,22 +608,19 @@ export default function Home() {
                 AO COMPRAR HOJE, VOCÊ GANHA <span className="text-primary">3 BÔNUS EXCLUSIVOS:</span>
               </h3>
               
-              <div className="space-y-4">
-                {[
-                  { title: "BÔNUS 1", description: "Resumos em áudio de cada capítulo!" },
-                  { title: "BÔNUS 2", description: "Estudos de caso exclusivos sobre renda fixa e variável!" },
-                  { title: "BÔNUS 3", description: "Exercícios de fixação para aprimorar o conhecimento!" }
-                ].map((bonus, idx) => (
-                  <div key={idx} className="flex items-center gap-4 p-4 bg-card border-l-4 border-primary">
-                    <div className="w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl flex-shrink-0">
-                      {idx + 1}
-                    </div>
-                    <div>
-                      <p className="font-bold text-lg">{bonus.title}</p>
-                      <p className="text-muted-foreground">{bonus.description}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className="space-y-6">
+                <div className="p-6 bg-card border-l-4 border-primary">
+                  <p className="font-bold text-lg mb-2">🎧 BÔNUS 1 — Resumos em áudio</p>
+                  <p className="text-muted-foreground leading-relaxed">Cada capítulo do ebook condensado em áudio de 5 a 8 minutos. Ideal para ouvir no trânsito, na academia ou onde preferir. Formato MP3, acesso imediato junto com o ebook.</p>
+                </div>
+                <div className="p-6 bg-card border-l-4 border-primary">
+                  <p className="font-bold text-lg mb-2">📋 BÔNUS 2 — Estudos de caso reais</p>
+                  <p className="text-muted-foreground leading-relaxed">Dois casos detalhados: uma pessoa saindo de dívidas no cartão de crédito e outra construindo sua primeira carteira de renda fixa do zero. Com os números reais e os erros que cometeram no caminho.</p>
+                </div>
+                <div className="p-6 bg-card border-l-4 border-primary">
+                  <p className="font-bold text-lg mb-2">✏️ BÔNUS 3 — Exercícios práticos por capítulo</p>
+                  <p className="text-muted-foreground leading-relaxed">Fichas de exercício para aplicar o que aprendeu em cada etapa — orçamento pessoal, simulação de investimentos e planejamento de metas. Em PDF, para imprimir ou preencher no computador.</p>
+                </div>
               </div>
             </div>
 
@@ -641,7 +648,7 @@ export default function Home() {
               asChild
             >
               <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={handleCheckoutClick}>
-                EU QUERO MEU EBOOK AGORA!
+                QUERO O EBOOK POR R$ 19,90 →
               </a>
             </Button>
 
@@ -699,28 +706,28 @@ export default function Home() {
           <div className="max-w-3xl mx-auto space-y-4">
             {[
               {
-                question: "O ebook foi escrito para qual público?",
-                answer: "O Invista Hoje foi criado especialmente para iniciantes que nunca investiram ou têm pouco conhecimento sobre o mercado financeiro. Se você quer sair das dívidas e começar a construir patrimônio, este guia é para você!",
+                question: "❓ Este guia é para quem ainda tem dívidas ou só para quem já está estável?",
+                answer: "Para os dois. O Capítulo 1 começa exatamente com quem está endividado — mostrando como organizar as finanças antes de pensar em investir. Você não precisa estar 'pronto' para começar a ler.",
                 icon: BookOpen
               },
               {
-                question: "Não estou achando o email com os dados de acesso ao ebook, o que eu faço?",
-                answer: "Verifique sua caixa de spam ou lixo eletrônico. O email vem de 'Hotmart' com o assunto contendo 'Invista Hoje'. Se ainda não encontrar, entre em contato com o suporte da Hotmart através da área de compras.",
+                question: "❓ Precisa ter muito dinheiro para colocar em prática o que ensina?",
+                answer: "Não. O guia foi pensado para quem começa com pouco. No Capítulo 3 mostramos como investir com valores a partir de R$ 30 no Tesouro Direto — o investimento mais seguro do Brasil.",
                 icon: Mail
               },
               {
-                question: "Comprei o ebook por boleto, quanto tempo demora para reconhecer a compra?",
-                answer: "Pagamentos por boleto podem levar até 3 dias úteis para serem confirmados pelo banco. Assim que o pagamento for identificado, você receberá automaticamente o acesso ao ebook por email.",
+                question: "❓ Qual a diferença disso para o que já tem grátis no YouTube?",
+                answer: "Conteúdo gratuito no YouTube é disperso, sem sequência e frequentemente misturado com indicações de corretoras. O Invista Hoje é um percurso estruturado do zero ao avançado, sem interrupção e sem conflito de interesse — você paga uma vez e lê no seu ritmo.",
                 icon: CreditCard
               },
               {
-                question: "Imprimi o ebook e ele ficou menor do que a folha. E agora?",
-                answer: "Nas configurações de impressão, ajuste a opção de escala para 'Ajustar à página' ou '100%'. Certifique-se de que a orientação está em 'Retrato' e o tamanho do papel é A4.",
+                question: "❓ Funciona para quem não entende nada de economia?",
+                answer: "Esse é exatamente o público. Não há fórmulas complexas, siglas sem explicação nem pressuposto de conhecimento prévio. Cada conceito é explicado antes de ser usado.",
                 icon: Printer
               },
               {
-                question: "Não estou conseguindo abrir o ebook, o que eu faço?",
-                answer: "O ebook está em formato PDF. Certifique-se de ter um leitor de PDF instalado (Adobe Reader, Foxit, ou visualizador do navegador). Se o problema persistir, tente baixar novamente o arquivo através do link no email de confirmação.",
+                question: "❓ E se eu não gostar?",
+                answer: "Sete dias de garantia total. Se por qualquer motivo você não ficar satisfeito, devolvemos 100% do valor sem perguntas — é uma obrigação legal pelo Código de Defesa do Consumidor, e a cumprimos rigorosamente.",
                 icon: FileText
               }
             ].map((faq, idx) => {
