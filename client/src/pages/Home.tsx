@@ -52,7 +52,7 @@ const TESTIMONIALS_DATA = [
   {
     name: "Malcolm Costa",
     role: "Programador Backend, 21 anos, São Paulo",
-    content: "Eu sempre achei que investimento era arriscado demais e que era melhor deixar o dinheiro na poupança. Depois de ler o Capítulo 2 sobre Renda Fixa e Renda Variável, entendi a diferença entre os tipos de investimento e como cada um funciona. Aprendi que risco não significa perda garantida — é sobre entender o que você está fazendo. Indico para qualquer programador que quer entender investimentos sem medo e de forma técnica.",
+    content: "Eu sempre achei que investimento era arriscado demais e que era melhor deixar o dinheiro na poupança. Depois de ler o Capítulo 2 sobre Renda Fixa e Renda Variável, entendi a diferença entre os tipos de investimento e como cada um funciona. Aprendi que risco não significa perda garantida — é sobre entender o que você está fazendo. Indico para qualquer pessoa que quer entender investimentos sem medo e desmistificar essa ideia de que é arriscado demais.",
     topic: "Compreensão de Riscos e Investimentos"
   }
 ];
