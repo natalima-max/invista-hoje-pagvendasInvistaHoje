@@ -31,7 +31,7 @@ import {
   Printer,
   FileText
 } from "lucide-react";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, memo, useCallback } from "react";
 
 const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/O101016720K?off=ifylfz1r&hotfeature=51";
 
@@ -57,19 +57,19 @@ const TESTIMONIALS_DATA = [
   }
 ];
 
-export default function Home() {
+function HomeComponent() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const testimonials = useMemo(() => TESTIMONIALS_DATA, []);
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
-  const prevTestimonial = () => {
+  const prevTestimonial = useCallback(() => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -92,18 +92,18 @@ export default function Home() {
   }, []);
 
 
-  const scrollToPrice = () => {
+  const scrollToPrice = useCallback(() => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'InitiateCheckout');
     }
     document.getElementById('price-section')?.scrollIntoView({ behavior: 'smooth' });
-  };
+  }, []);
 
-  const handleCheckoutClick = () => {
+  const handleCheckoutClick = useCallback(() => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'InitiateCheckout');
     }
-  };
+  }, []);
 
 
   return (
@@ -145,6 +145,8 @@ export default function Home() {
                     src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663277020619/muOFDXRHnzWruYQz.png" 
                     alt="Ebook Invista Hoje" 
                     className="w-full h-auto"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="absolute -bottom-3 -right-3 bg-primary text-primary-foreground px-2 py-1 font-mono font-bold text-xs border-4 border-background">
@@ -192,6 +194,8 @@ export default function Home() {
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663277020619/muOFDXRHnzWruYQz.png" 
                   alt="Ebook Invista Hoje" 
                   className="w-full h-auto"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground px-6 py-3 font-mono font-bold text-lg border-4 border-background">
@@ -630,6 +634,8 @@ export default function Home() {
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663277020619/wXnhmtKYWPiYdxWS.png" 
                 alt="Garantia 7 Dias" 
                 className="w-32 h-32"
+                loading="lazy"
+                decoding="async"
               />
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-2xl font-display font-bold mb-2">
@@ -781,3 +787,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default memo(HomeComponent);

@@ -119,6 +119,13 @@
   --sidebar-ring: oklch(0.38 0.12 185);
 }
 
+@layer utilities {
+  /* Image loading optimization */
+  img[loading="lazy"] {
+    @apply bg-muted/10;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -186,5 +193,24 @@
       padding-right: 2rem;
       max-width: 1280px; /* Standard content width */
     }
+  }
+
+  /* Performance optimizations */
+  img {
+    @apply will-change-auto;
+  }
+
+  /* Optimize animations for performance */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* GPU acceleration for smooth scrolling */
+  section {
+    @apply will-change-transform;
   }
 }

@@ -22,6 +22,16 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    minify: 'esbuild',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor': ['react', 'react-dom'],
+        },
+      },
+    },
+    reportCompressedSize: false,
+    chunkSizeWarningLimit: 1000,
   },
   server: {
     port: 3000,
