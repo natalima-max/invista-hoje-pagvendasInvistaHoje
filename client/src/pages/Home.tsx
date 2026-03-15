@@ -142,7 +142,7 @@ function HomeComponent() {
               <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="relative md:hidden block" onClick={handleCheckoutClick}>
                 <div className="border-4 border-primary p-2 bg-card max-w-xs hover:opacity-90 transition-opacity">
                   <img 
-                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663277020619/muOFDXRHnzWruYQz.png" 
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663277020619/VJsugnGrR7givyB9cW6rBT/ebook_cover_12f0dfab.webp" 
                     alt="Ebook Invista Hoje" 
                     className="w-full h-auto"
                     loading="lazy"
@@ -191,7 +191,7 @@ function HomeComponent() {
              <a href={HOTMART_CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="relative hidden md:block" onClick={handleCheckoutClick}>
               <div className="border-4 md:border-8 border-primary p-2 md:p-4 bg-card hover:opacity-90 transition-opacity">
                 <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663277020619/muOFDXRHnzWruYQz.png" 
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663277020619/VJsugnGrR7givyB9cW6rBT/ebook_cover_12f0dfab.webp" 
                   alt="Ebook Invista Hoje" 
                   className="w-full h-auto"
                   loading="eager"
@@ -631,7 +631,7 @@ function HomeComponent() {
             {/* Guarantee */}
             <div className="flex flex-col md:flex-row items-center gap-8 bg-background border-4 border-primary p-8 mb-8">
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663277020619/wXnhmtKYWPiYdxWS.png" 
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663277020619/VJsugnGrR7givyB9cW6rBT/guarantee_badge_48fe3ebe.webp" 
                 alt="Garantia 7 Dias" 
                 className="w-32 h-32"
                 loading="lazy"
